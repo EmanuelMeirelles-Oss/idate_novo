@@ -142,6 +142,7 @@ export const OBSERVATORIOS: readonly Observatorio[] = [
       "Como se distribui a compensação financeira pela exploração mineral entre os entes federativos?",
       "Que obrigações de recuperação ambiental incidem sobre áreas lavradas e como são fiscalizadas?",
       "Qual o tratamento jurídico dos conflitos entre atividade mineral e uso agrícola do solo?",
+      "Que mudanças normativas podem resultar do sandbox regulatório para o setor mineral atualmente em consulta pública pela ANM?",
     ],
   },
   {
