@@ -100,7 +100,7 @@ export function HeroConteudo({
         </motion.div>
       </span>
 
-      <h1 className="mt-6 text-3xl font-bold leading-[1.08] tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-osso">
+      <h1 className="mt-6 text-balance text-3xl font-bold leading-[1.08] tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-osso">
         {titulo.map((linha) => (
           <span key={linha} className="block overflow-hidden pb-[0.06em]">
             <motion.span data-reveal variants={SOBE} className="block">
@@ -198,7 +198,7 @@ export function HeroConteudo({
                   />
                 </div>
 
-                <span className="mt-2 block truncate font-mono text-[0.5625rem] uppercase tracking-widest text-fumaca">
+                <span className="mt-2 line-clamp-2 font-mono text-[0.5625rem] uppercase tracking-wide text-fumaca">
                   {pilar.tag}
                 </span>
               </button>

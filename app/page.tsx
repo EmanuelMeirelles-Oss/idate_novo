@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/hero";
 import { Lema } from "@/components/sections/lema";
+import { Eixos } from "@/components/sections/eixos";
 import { GradeObservatorios } from "@/components/sections/grade-observatorios";
 import { Esteira } from "@/components/sections/esteira";
 import { Banda } from "@/components/sections/banda";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Hero conteudo={HOME.hero} rolagem="Explorar o instituto" />
       <Lema {...HOME.lema} />
+      <Eixos {...HOME.eixos} />
       <GradeObservatorios
         rotulo="01 — Observatórios"
         titulo={HOME.observatorios.titulo}

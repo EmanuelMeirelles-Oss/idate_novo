@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePodeAnimar } from "@/lib/use-pode-animar";
 
 export type IdPilarGlow = "agua" | "terra" | "energia";
 
@@ -16,6 +17,7 @@ interface PropsPilarGlowHero {
  */
 export function PilarGlowHero({ pilar, className = "" }: PropsPilarGlowHero) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const podeAnimar = usePodeAnimar(canvasRef);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -97,7 +99,9 @@ export function PilarGlowHero({ pilar, className = "" }: PropsPilarGlowHero) {
         }
       }
 
-      animFrameId = requestAnimationFrame(renderizar);
+      if (podeAnimar) {
+        animFrameId = requestAnimationFrame(renderizar);
+      }
     };
 
     renderizar();
@@ -106,7 +110,7 @@ export function PilarGlowHero({ pilar, className = "" }: PropsPilarGlowHero) {
       cancelAnimationFrame(animFrameId);
       window.removeEventListener("resize", redimensionar);
     };
-  }, [pilar]);
+  }, [pilar, podeAnimar]);
 
   return (
     <canvas

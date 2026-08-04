@@ -40,6 +40,11 @@ yarn-error.log*
 # atalho local para push (nao faz parte do projeto)
 ENVIAR-PARA-GITHUB.bat
 
+# materiais brutos de imagem (fonte, antes do preparo em public/imagens) e
+# arquivos de trabalho de brainstorming — não fazem parte do site publicado
+/_brutos/
+/.superpowers/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

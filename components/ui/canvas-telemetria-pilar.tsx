@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePodeAnimar } from "@/lib/use-pode-animar";
 
 export type IdPilarTelemetria = "agua" | "terra" | "energia";
 
@@ -13,6 +14,7 @@ const CHAR_SET_AGUA = ["@", "%", "#", "*", "+", "=", "~", ":", ".", " "];
 
 export function CanvasTelemetriaPilar({ pilar, className = "" }: PropsCanvasTelemetria) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const podeAnimar = usePodeAnimar(canvasRef);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -136,7 +138,9 @@ export function CanvasTelemetriaPilar({ pilar, className = "" }: PropsCanvasTele
         }
       }
 
-      animFrameId = requestAnimationFrame(renderizar);
+      if (podeAnimar) {
+        animFrameId = requestAnimationFrame(renderizar);
+      }
     };
 
     renderizar();
@@ -145,7 +149,7 @@ export function CanvasTelemetriaPilar({ pilar, className = "" }: PropsCanvasTele
       cancelAnimationFrame(animFrameId);
       window.removeEventListener("resize", redimensionar);
     };
-  }, [pilar]);
+  }, [pilar, podeAnimar]);
 
   return (
     <canvas

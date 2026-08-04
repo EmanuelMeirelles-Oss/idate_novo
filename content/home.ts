@@ -51,6 +51,49 @@ export const HOME = {
       "Denúncia isolada é registro estatístico. Denúncia recorrente é objeto de pesquisa. O instituto existe para fazer essa passagem com método, e para publicar o resultado.",
   },
 
+  /*
+    Os três eixos, em foto. A tese do Lema aterrissa em setor concreto antes de
+    entrar no grid dos 8 observatórios — cada um deles já pertence a um destes
+    três eixos (ou a "transversal"). Tags reaproveitadas de
+    docs/copy-home-v2.md §04, que descrevia os mesmos setores; só a moldura de
+    venda em volta delas foi descartada, não a lista em si.
+  */
+  eixos: {
+    kicker: { rotulo: "Os três recursos" },
+    titulo: "Três setores, e uma densidade normativa que poucos acompanham.",
+    intro:
+      "Água, terra e energia sustentam quase toda a atividade produtiva do país. Ao redor deles formou-se, ao longo de décadas, uma estrutura de leis, concessões, outorgas, tributos e encargos que se sobrepõem em camadas. É aí que nascem os direitos patrimoniais mais relevantes, e é aí que eles somem.",
+    lista: [
+      {
+        nome: "Água",
+        imagem: {
+          src: "/imagens/agua.jpg",
+          alt: "Vista aérea de tanques circulares de uma estação de tratamento de água, névoa sobre a superfície ao amanhecer.",
+        },
+        tags: ["Saneamento", "Concessionárias", "Outorgas de captação", "Agroindústria irrigada"],
+        href: "/observatorios?eixo=agua",
+      },
+      {
+        nome: "Terra",
+        imagem: {
+          src: "/imagens/terra.jpg",
+          alt: "Vista aérea de uma mina a céu aberto, terraços concêntricos descendo em espiral.",
+        },
+        tags: ["Agronegócio", "Mineração", "Produção de alimentos", "Infraestrutura e logística"],
+        href: "/observatorios?eixo=terra",
+      },
+      {
+        nome: "Energia",
+        imagem: {
+          src: "/imagens/energia.jpg",
+          alt: "Vertedouro de usina hidrelétrica à noite, água caindo em lâminas junto a luzes industriais.",
+        },
+        tags: ["Geração e distribuição", "Encargos setoriais", "Indústria eletrointensiva", "Mercado livre"],
+        href: "/observatorios?eixo=energia",
+      },
+    ],
+  },
+
   observatorios: {
     titulo: "Oito observatórios permanentes.",
     intro:

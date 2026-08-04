@@ -10,10 +10,7 @@ import { CANAL, LEMA } from "@/content/site";
 export const DENUNCIA = {
   hero: {
     kicker: { rotulo: CANAL.nome },
-    titulo: [
-      "Você identificou uma possível ilegalidade",
-      "envolvendo água, terra ou energia?",
-    ],
+    titulo: ["Você identificou uma possível ilegalidade envolvendo água, terra ou energia?"],
     subtitulo:
       "Comunique ao IDATE. Sua informação entra na triagem técnica do instituto e pode originar um núcleo de pesquisa.",
     /*
