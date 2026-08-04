@@ -1,0 +1,96 @@
+<style>
+  .hero-mock {
+    position: relative;
+    aspect-ratio: 16/8;
+    border-radius: 10px;
+    overflow: hidden;
+    background:
+      linear-gradient(90deg, #0a0c10 0%, rgba(10,12,16,0.85) 45%, rgba(10,12,16,0.15) 100%),
+      linear-gradient(0deg, #0a0c10 0%, rgba(10,12,16,0.6) 35%, transparent 70%),
+      radial-gradient(120% 90% at 78% 30%, #223449 0%, #101a24 45%, #060a10 100%);
+    background-blend-mode: normal, normal, normal;
+  }
+  .hero-mock .txt {
+    position: absolute; left: 20px; bottom: 20px; z-index: 5;
+    color: #e9ebef; font-family: system-ui, sans-serif;
+  }
+  .hero-mock .txt .kick {
+    display: inline-block; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #5b7cff; background: rgba(20,23,29,0.55); border-radius: 999px; padding: 3px 8px; margin-bottom: 8px;
+  }
+  .hero-mock .txt h4 { margin: 0; font-size: 15px; font-weight: 700; letter-spacing: -0.02em; max-width: 220px; line-height: 1.15; }
+
+  /* Option A: edge signature strip along bottom */
+  .strip-a { position:absolute; left:0; right:0; bottom:0; height:26%; z-index:2; overflow:hidden; }
+  .strip-a svg { width:200%; height:100%; animation: driftA 6s linear infinite; }
+  @keyframes driftA { from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+
+  /* Option B: full-bleed overlay across whole photo */
+  .overlay-b { position:absolute; inset:0; z-index:2; opacity:0.5; background-image:
+      repeating-linear-gradient(100deg, rgba(91,124,255,0.16) 0 1px, transparent 1px 26px); animation: waveB 5s ease-in-out infinite alternate; }
+  @keyframes waveB { from{ background-position: 0 0; opacity:.35;} to{ background-position: 60px 40px; opacity:.55;} }
+  .overlay-b::after { content:""; position:absolute; inset:0; background: radial-gradient(circle at 30% 60%, rgba(91,124,255,0.25), transparent 60%); animation: pulseB 3.5s ease-in-out infinite; }
+  @keyframes pulseB { 0%,100%{opacity:.4} 50%{opacity:.9} }
+
+  /* Option C: reactive edge glow only within existing dark veils */
+  .glow-c { position:absolute; left:0; top:0; bottom:0; width:38%; z-index:2; }
+  .glow-c .line { position:absolute; left:8%; width:78%; height:1px; background:linear-gradient(90deg, transparent, rgba(91,124,255,0.55), transparent); animation: riseC 3.2s ease-in-out infinite; }
+  .glow-c .line:nth-child(1){ top:20%; animation-delay:0s; }
+  .glow-c .line:nth-child(2){ top:45%; animation-delay:.6s; }
+  .glow-c .line:nth-child(3){ top:70%; animation-delay:1.2s; }
+  @keyframes riseC { 0%{opacity:0; transform:translateY(6px);} 40%{opacity:.9;} 100%{opacity:0; transform:translateY(-10px);} }
+
+  .cap { text-align:center; font-family: system-ui, sans-serif; font-size:12px; color:#8b93a1; margin-top:10px; }
+</style>
+
+<h2>Como a camada generativa (água/terra/energia) deve aparecer sobre a foto no hero?</h2>
+<p class="subtitle">A base é sempre a fotografia. A pergunta é o quanto do movimento gerado por código deve tomar espaço por cima dela.</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <div class="hero-mock">
+        <div class="strip-a">
+          <svg viewBox="0 0 200 40" preserveAspectRatio="none">
+            <path d="M0 20 Q 12 8, 25 20 T 50 20 T 75 20 T 100 20 T 125 20 T 150 20 T 175 20 T 200 20" fill="none" stroke="#5b7cff" stroke-width="1.4" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="txt"><span class="kick">Associação civil</span><h4>Três recursos sustentam o país.</h4></div>
+      </div>
+      <div class="cap">Faixa-assinatura: uma tira fina embaixo, morphando entre os 3 padrões</div>
+      <h3>Faixa-assinatura</h3>
+      <p>Elemento novo e discreto na base do hero — não toca a foto. Assinatura de dados, não decoração.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <div class="hero-mock">
+        <div class="overlay-b"></div>
+        <div class="txt"><span class="kick">Associação civil</span><h4>Três recursos sustentam o país.</h4></div>
+      </div>
+      <div class="cap">Camada full-bleed: o padrão cobre toda a foto</div>
+      <h3>Full-bleed sobre a foto</h3>
+      <p>Máxima presença do conceito, mas compete com a fotografia e pode lembrar "textura de IA".</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <div class="hero-mock">
+        <div class="glow-c"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+        <div class="txt"><span class="kick">Associação civil</span><h4>Três recursos sustentam o país.</h4></div>
+      </div>
+      <div class="cap">Brilho reativo: linhas sutis só dentro do véu escuro já existente</div>
+      <h3>Reativo nas bordas</h3>
+      <p>Usa o véu escuro que já existe para o texto. O mais discreto e mais alinhado ao tom atual do site.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <p class="subtitle">Clique em uma opção acima. Se quiser ver combinações (ex: A + C), me diga no terminal.</p>
+</div>

@@ -1,0 +1,55 @@
+<style>
+  .cand { border:1px solid rgba(255,255,255,0.12); border-radius:10px; overflow:hidden; margin-bottom: 28px; }
+  .cand-head { padding: 12px 16px; font-family: system-ui, sans-serif; }
+  .cand-head h3 { margin:0 0 4px; font-size:15px; }
+  .cand-head p { margin:0; font-size:12px; opacity:0.7; }
+  .pair { display:grid; grid-template-columns: 1fr 1fr; gap:1px; background: rgba(255,255,255,0.08); }
+  .pair figure { margin:0; position:relative; aspect-ratio: 21/9; overflow:hidden; background:#000; }
+  .pair img { width:100%; height:100%; object-fit:cover; display:block; }
+  .pair figcaption { position:absolute; left:8px; bottom:8px; font-family: monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#fff; background:rgba(0,0,0,0.5); padding:3px 7px; border-radius:4px; }
+  .grade { filter: grayscale(0.55) sepia(0.35) hue-rotate(155deg) saturate(1.6) brightness(0.55) contrast(1.15); }
+  .veil { position:absolute; inset:0; background: linear-gradient(90deg, #0a0c10 0%, rgba(10,12,16,0.85) 42%, rgba(10,12,16,0.15) 100%); }
+</style>
+
+<h2>3 fotos reais candidatas ao hero (banco livre de direitos, sem marca d'água)</h2>
+<p class="subtitle">Cada uma aparece crua (esquerda) e com um tratamento CSS aproximado do grading do brief — escurecido, dessaturado, puxado pro teal (direita). O tratamento final é feito em código, não na imagem, então funciona sobre qualquer uma das três.</p>
+
+<div class="cand">
+  <div class="cand-head">
+    <h3>A — Torre em meio à neblina densa (Lei Hwang)</h3>
+    <p>Já nasce quase no tom certo — cinza-azulado, denso, dramático. Retrato na origem (alta, estreita); pra virar hero 21:9 precisa de recomposição/crop generoso, perde parte da moldura vertical.</p>
+  </div>
+  <div class="pair">
+    <figure><img src="https://images.unsplash.com/photo-1770734519441-7c3d77c2f3a5?fm=jpg&q=75&w=1600&auto=format&fit=crop&crop=entropy"><figcaption>crua</figcaption></figure>
+    <figure><img class="grade" src="https://images.unsplash.com/photo-1770734519441-7c3d77c2f3a5?fm=jpg&q=75&w=1600&auto=format&fit=crop&crop=entropy"><div class="veil"></div><figcaption>com veú + grade</figcaption></figure>
+  </div>
+</div>
+
+<div class="cand">
+  <div class="cand-head">
+    <h3>B — Torre e sol nascendo por trás, neblina baixa (Thilina Alagiyawanna)</h3>
+    <p>Já é 21:9, névoa atmosférica exatamente como o brief pede, área vazia generosa (hoje à direita — dá pra espelhar a imagem e o texto entra à esquerda como sempre). Cor original é quente; o grade rotaciona pro frio.</p>
+  </div>
+  <div class="pair">
+    <figure><img src="https://images.unsplash.com/photo-1783254917095-e909669ea8a8?fm=jpg&q=75&w=1600&auto=format&fit=crop"><figcaption>crua</figcaption></figure>
+    <figure><img class="grade" style="transform:scaleX(-1)" src="https://images.unsplash.com/photo-1783254917095-e909669ea8a8?fm=jpg&q=75&w=1600&auto=format&fit=crop"><div class="veil"></div><figcaption>espelhada + veú + grade</figcaption></figure>
+  </div>
+</div>
+
+<div class="cand">
+  <div class="cand-head">
+    <h3>C — Torres cruzando fazenda em grade geométrica, céu aberto (Bernd Dittrich)</h3>
+    <p>Composição mais "documental/dado" — linhas de transmissão cortando terras cultivadas, céu como espaço vazio generoso. Original é dia claro; precisa do grade mais forte dos três pra chegar no clima noturno.</p>
+  </div>
+  <div class="pair">
+    <figure><img src="https://images.unsplash.com/photo-1784471968186-00fcc3acc35b?fm=jpg&q=75&w=1600&auto=format&fit=crop"><figcaption>crua</figcaption></figure>
+    <figure><img class="grade" src="https://images.unsplash.com/photo-1784471968186-00fcc3acc35b?fm=jpg&q=75&w=1600&auto=format&fit=crop"><div class="veil"></div><figcaption>com veú + grade</figcaption></figure>
+  </div>
+</div>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)"><div class="letter">A</div><div class="content"><h3>Torre na neblina</h3><p>Mood mais forte, exige mais trabalho de crop/composição.</p></div></div>
+  <div class="option" data-choice="b" onclick="toggleSelect(this)"><div class="letter">B</div><div class="content"><h3>Torre + sol + névoa baixa</h3><p>Melhor equilíbrio pronto: 21:9, névoa, espaço vazio.</p></div></div>
+  <div class="option" data-choice="c" onclick="toggleSelect(this)"><div class="letter">C</div><div class="content"><h3>Grade de transmissão sobre lavoura</h3><p>Mais "dado/território", céu aberto generoso.</p></div></div>
+  <div class="option" data-choice="none" onclick="toggleSelect(this)"><div class="letter">✕</div><div class="content"><h3>Nenhuma serve</h3><p>Quero ver outras opções.</p></div></div>
+</div>
