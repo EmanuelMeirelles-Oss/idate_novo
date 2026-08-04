@@ -48,3 +48,6 @@ ENVIAR-PARA-GITHUB.bat
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
+.env*
