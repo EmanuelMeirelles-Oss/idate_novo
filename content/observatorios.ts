@@ -135,7 +135,7 @@ export const OBSERVATORIOS: readonly Observatorio[] = [
     nome: "Observatório de Recursos Minerais",
     nomeCurto: "Recursos Minerais",
     eixo: "terra",
-    estado: "constituicao",
+    estado: "ativo",
     escopo:
       "Acompanha o regime de outorga mineral, a compensação financeira pela exploração de recursos minerais e os passivos socioambientais da atividade.",
     perguntas: [

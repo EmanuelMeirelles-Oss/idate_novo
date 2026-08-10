@@ -91,12 +91,47 @@ export interface Publicacao {
   readonly destaque?: boolean;
 }
 
-/**
- * PENDENTE: acervo da IMEPPI ainda não incorporado. Ver content/PENDENCIAS.md.
- * A interface acima é o contrato; acrescentar itens aqui é suficiente para que
- * apareçam na biblioteca, no observatório correspondente e nos filtros.
- */
-export const PUBLICACOES: readonly Publicacao[] = [];
+export const PUBLICACOES: readonly Publicacao[] = [
+  {
+    slug: "anm-exigencias-tecnicas-barragens-mg-2026",
+    titulo:
+      "ANM fixa prazos para exigências técnicas em barragens da Vale, Anglo American e Green Metals",
+    resumo:
+      "Análise regulatória sobre o Despacho da Relação nº 21/2026 da ANM, que fixou prazos técnicos nas barragens Maravilhas II, Mãe D'água e Sistema Minas-Rio, indeferindo alteração cadastral requerida pela Anglo American sob a Lei nº 12.334/2010.",
+    tipo: "nota-tecnica",
+    observatorio: "recursos-minerais",
+    autores: [{ nome: "Equipe Técnica do IDATE", titulacao: "Observatório de Recursos Minerais" }],
+    publicadoEm: "2026-08-04",
+    tags: ["Mineração", "Segurança de Barragens", "ANM", "Vale", "Anglo American", "Green Metals"],
+    destaque: true,
+  },
+  {
+    slug: "anm-exigencia-campo-grande-extrativa-2026",
+    titulo:
+      "ANM determina cumprimento de exigência técnica em barragem Campo Grande da Vale e indefere prorrogação à Extrativa Metalurgia",
+    resumo:
+      "Avaliação técnica do Despacho da Relação nº 24/2026 da ANM referente aos prazos de descaracterização na barragem Campo Grande (Mariana/MG) e imposição de exigência técnica com prazo de 30 dias na barragem Rejeitos da Extrativa Metalurgia.",
+    tipo: "nota-tecnica",
+    observatorio: "recursos-minerais",
+    autores: [{ nome: "Equipe Técnica do IDATE", titulacao: "Observatório de Recursos Minerais" }],
+    publicadoEm: "2026-08-05",
+    tags: ["Mineração", "Descaracterização de Barragens", "ANM", "Vale", "Extrativa Metalurgia"],
+    destaque: false,
+  },
+  {
+    slug: "anm-notificacao-cobranca-cfem-11-bi",
+    titulo:
+      "Notificação da ANM a mineradoras para pagamento de R$ 11,5 bilhões em CFEM: Impactos na partilha federativa",
+    resumo:
+      "Exame analítico sobre a notificação de cobrança de R$ 11,5 bilhões em CFEM em 30 processos administrativos no Pará e em Minas Gerais, avaliando o prazo de defesa de 10 dias e o impacto na arrecadação dos municípios mineradores e afetados.",
+    tipo: "estudo",
+    observatorio: "recursos-minerais",
+    autores: [{ nome: "Equipe Técnica do IDATE", titulacao: "Observatório de Recursos Minerais" }],
+    publicadoEm: "2026-08-05",
+    tags: ["CFEM", "Compensação Financeira", "Federalismo Fiscal", "ANM", "Vale"],
+    destaque: true,
+  },
+];
 
 export function publicacoesDoObservatorio(
   observatorio: IdObservatorio,

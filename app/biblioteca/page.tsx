@@ -83,27 +83,49 @@ export default function Biblioteca() {
             </Reveal>
           ) : (
             <ul className="grid gap-6 md:grid-cols-2">
-              {PUBLICACOES.map((publicacao) => (
-                <li key={publicacao.slug}>
-                  <article className="h-full rounded-lg border border-fio bg-carvao/30 p-6 sm:p-8">
-                    <span className="font-mono text-[0.625rem] uppercase tracking-[0.14em] text-cobalto-claro">
-                      {TIPOS_PUBLICACAO[publicacao.tipo].rotulo}
-                    </span>
-                    <h3 className="mt-4 text-xl font-bold leading-tight tracking-tight text-osso">
-                      {publicacao.titulo}
-                    </h3>
-                    <p className="mt-4 text-sm leading-relaxed text-fumaca">
-                      {publicacao.resumo}
-                    </p>
-                    <Link
-                      href={`/observatorios/${publicacao.observatorio}`}
-                      className="mt-6 inline-block font-mono text-[0.625rem] uppercase tracking-[0.14em] text-cobalto-claro hover:text-osso"
-                    >
-                      {publicacao.observatorio}
-                    </Link>
-                  </article>
-                </li>
-              ))}
+              {PUBLICACOES.map((publicacao) => {
+                const obs = OBSERVATORIOS.find((o) => o.slug === publicacao.observatorio);
+                return (
+                  <li key={publicacao.slug}>
+                    <article className="flex h-full flex-col justify-between rounded-lg border border-fio bg-carvao/30 p-6 sm:p-8 transition-all hover:border-cobalto-claro/40 hover:bg-carvao/60">
+                      <div>
+                        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-fio/60 pb-3">
+                          <span className="font-mono text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-cobalto-claro">
+                            {TIPOS_PUBLICACAO[publicacao.tipo].rotulo}
+                          </span>
+                          <time
+                            dateTime={publicacao.publicadoEm}
+                            className="font-mono text-[0.625rem] uppercase tracking-[0.14em] text-fumaca"
+                          >
+                            {publicacao.publicadoEm.split("-").reverse().join("/")}
+                          </time>
+                        </div>
+
+                        <h3 className="mt-4 text-xl font-bold leading-tight tracking-tight text-osso">
+                          {publicacao.titulo}
+                        </h3>
+                        <p className="mt-3 text-sm leading-relaxed text-fumaca">
+                          {publicacao.resumo}
+                        </p>
+                      </div>
+
+                      <div className="mt-6 flex flex-wrap items-center justify-between gap-2 border-t border-fio/60 pt-4">
+                        <Link
+                          href={`/observatorios/${publicacao.observatorio}`}
+                          className="font-mono text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-cobalto-claro hover:text-osso transition-colors"
+                        >
+                          {obs ? obs.nomeCurto : publicacao.observatorio}
+                        </Link>
+                        {publicacao.tags && publicacao.tags.length > 0 && (
+                          <span className="font-mono text-[0.6875rem] text-fumaca">
+                            {publicacao.tags.slice(0, 2).join(" • ")}
+                          </span>
+                        )}
+                      </div>
+                    </article>
+                  </li>
+                );
+              })}
             </ul>
           )}
         </Container>

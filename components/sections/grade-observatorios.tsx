@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/container";
 import { CTALink } from "@/components/ui/cta-link";
 import { Reveal } from "@/components/ui/reveal";
 import { EIXOS, type Observatorio } from "@/content/observatorios";
+import { contarItensRadar } from "@/content/radar";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 
 export function GradeObservatorios({
@@ -47,11 +48,19 @@ export function GradeObservatorios({
                     <span className="font-mono text-[0.625rem] uppercase tracking-[0.16em] text-cobalto-claro">
                       {EIXOS[observatorio.eixo].rotulo}
                     </span>
-                    {observatorio.estado === "constituicao" && (
-                      <span className="shrink-0 rounded-full border border-fio bg-noite/50 px-2.5 py-0.5 font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-fumaca">
-                        Em constituição
-                      </span>
-                    )}
+                    <div className="flex flex-wrap items-center gap-2">
+                      {contarItensRadar(observatorio.slug) > 0 && (
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-cobalto-claro/40 bg-cobalto/20 px-2.5 py-0.5 font-mono text-[0.5625rem] font-medium uppercase tracking-[0.12em] text-cobalto-claro">
+                          <span className="h-1.5 w-1.5 rounded-full bg-cobalto-claro animate-pulse" />
+                          Radar: {contarItensRadar(observatorio.slug)} atos
+                        </span>
+                      )}
+                      {observatorio.estado === "constituicao" && (
+                        <span className="shrink-0 rounded-full border border-fio bg-noite/50 px-2.5 py-0.5 font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-fumaca">
+                          Em constituição
+                        </span>
+                      )}
+                    </div>
                   </div>
 
                   <h3 className="mt-5 text-xl font-bold leading-tight tracking-tight text-osso transition-colors group-hover:text-cobalto-claro md:text-2xl">
