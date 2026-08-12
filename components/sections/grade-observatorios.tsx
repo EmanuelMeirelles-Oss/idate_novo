@@ -55,9 +55,13 @@ export function GradeObservatorios({
                           Radar: {contarItensRadar(observatorio.slug)} atos
                         </span>
                       )}
-                      {observatorio.estado === "constituicao" && (
+                      {observatorio.estado === "constituicao" ? (
                         <span className="shrink-0 rounded-full border border-fio bg-noite/50 px-2.5 py-0.5 font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-fumaca">
                           Em constituição
+                        </span>
+                      ) : (
+                        <span className="shrink-0 rounded-full border border-cobalto-claro/40 bg-cobalto/25 px-2.5 py-0.5 font-mono text-[0.5625rem] font-medium uppercase tracking-[0.12em] text-cobalto-claro">
+                          Ativo
                         </span>
                       )}
                     </div>

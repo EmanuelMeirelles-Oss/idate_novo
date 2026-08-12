@@ -37,12 +37,35 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    name: SITE.nomeCompleto,
+    alternateName: SITE.nome,
+    url: SITE.url,
+    description: SITE.descricao,
+    knowsAbout: [
+      "Direito da Mineração",
+      "Segurança de Barragens",
+      "Recursos Hídricos",
+      "Energia Elétrica",
+      "CFEM",
+      "Regulação e Concessões",
+    ],
+  };
+
   return (
     <html
       lang="pt-BR"
       data-scroll-behavior="smooth"
       className={`${geist.variable} ${geistMono.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-sans">
         <a
           href="#conteudo"

@@ -475,7 +475,16 @@ export function FormularioDenuncia({ eixoInicial }: { eixoInicial?: string }) {
                 className="mt-1 h-5 w-5 shrink-0 accent-cobalto"
               />
               <span className="text-sm leading-relaxed text-fumaca">
-                {T.campos.consentimento}
+                {T.campos.consentimento}{" "}
+                <a
+                  href="/privacidade"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cobalto-claro underline hover:text-osso transition-colors"
+                >
+                  Conheça nossa Política de Privacidade & LGPD
+                </a>
+                .
               </span>
             </label>
             <Erro id="consentimento-erro" mensagem={erros.consentimento} />

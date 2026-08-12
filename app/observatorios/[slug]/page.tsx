@@ -10,10 +10,13 @@ import {
   OBSERVATORIOS,
   buscarObservatorio,
 } from "@/content/observatorios";
-import { publicacoesDoObservatorio } from "@/content/publicacoes";
+import {
+  publicacoesDoObservatorio,
+  TIPOS_PUBLICACAO,
+} from "@/content/publicacoes";
 import { RadarRegulatorio } from "@/components/sections/radar-regulatorio";
 import { CANAL } from "@/content/site";
-import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
+import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 
 /*
   Em Next 16 `params` é uma Promise e precisa ser aguardada — tanto na página
@@ -139,11 +142,14 @@ export default async function PaginaObservatorio({ params }: Props) {
             <ul className="mt-10 grid gap-6 md:grid-cols-2">
               {publicacoes.map((publicacao) => (
                 <li key={publicacao.slug}>
-                  <article className="flex h-full flex-col justify-between rounded-lg border border-fio bg-carvao/30 p-6 sm:p-8 transition-all hover:border-cobalto-claro/40 hover:bg-carvao/60">
+                  <Link
+                    href={`/biblioteca/${publicacao.slug}`}
+                    className="group flex h-full flex-col justify-between rounded-lg border border-fio bg-carvao/30 p-6 sm:p-8 transition-all duration-300 hover:border-cobalto-claro/50 hover:bg-carvao/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalto-claro"
+                  >
                     <div>
                       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-fio/60 pb-3">
                         <span className="font-mono text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-cobalto-claro">
-                          {publicacao.tipo.replace("-", " ")}
+                          {TIPOS_PUBLICACAO[publicacao.tipo].rotulo}
                         </span>
                         <time
                           dateTime={publicacao.publicadoEm}
@@ -153,7 +159,7 @@ export default async function PaginaObservatorio({ params }: Props) {
                         </time>
                       </div>
 
-                      <h3 className="mt-4 text-xl font-bold leading-tight tracking-tight text-osso">
+                      <h3 className="mt-4 text-xl font-bold leading-tight tracking-tight text-osso transition-colors group-hover:text-cobalto-claro">
                         {publicacao.titulo}
                       </h3>
                       <p className="mt-3 text-sm leading-relaxed text-fumaca">
@@ -165,13 +171,16 @@ export default async function PaginaObservatorio({ params }: Props) {
                       <span className="text-xs text-osso font-medium">
                         {publicacao.autores.map((a) => a.nome).join(", ")}
                       </span>
-                      {publicacao.tags && publicacao.tags.length > 0 && (
-                        <span className="font-mono text-[0.6875rem] text-fumaca">
-                          {publicacao.tags.slice(0, 2).join(" • ")}
-                        </span>
-                      )}
+                      <span className="inline-flex items-center gap-1 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-cobalto-claro">
+                        Ler nota
+                        <ArrowUpRight
+                          size={14}
+                          weight="bold"
+                          className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                        />
+                      </span>
                     </div>
-                  </article>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -62,3 +62,14 @@
   * Exibição de cards ricos na Biblioteca (`app/biblioteca/page.tsx`) e badges de radar ativo na grade de observatórios (`components/sections/grade-observatorios.tsx`).
   * Criação da suíte de testes `lib/radar.test.ts` (36 testes aprovados).
   * Build e deploy em produção na Vercel via GitHub `main`.
+
+### [12/08/2026] — Leitura Individual do Acervo (/biblioteca/[slug]), Governança LGPD, Radar na Home e SEO Estruturado
+* **Demanda**: Auditoria de melhorias críticas identificadas no site (leitura do acervo, conformidade LGPD, coerência editorial dos observatórios e SEO).
+* **Solução Implementada**:
+  * **Páginas de Leitura Dedicadas (`app/biblioteca/[slug]/page.tsx`)**: Leitura completa de cada nota técnica e estudo com fundamentação legal, ficha técnica, citações ABNT, links para fontes oficiais no DOU/ANM e categorização.
+  * **Filtros e Cards na Biblioteca (`app/biblioteca/page.tsx`)**: Implementado filtro por tipo de documento via URL e cards clicáveis direcionando para a leitura.
+  * **Destaque na Home (`components/sections/acervo-destaque.tsx` e `app/page.tsx`)**: Seção na página inicial exibindo o pulso do Radar Regulatório Semanal e as publicações recentes.
+  * **Governança LGPD & Privacidade (`app/privacidade/page.tsx` e `content/privacidade.ts`)**: Política formal de privacidade cobrindo legítimo interesse, sigilo absoluto da fonte denunciante e contato do DPO, com links no rodapé e no termo de consentimento da Central de Denúncias.
+  * **SEO Técnico & Schema.org**: Criação de `app/sitemap.ts`, `app/robots.ts` e inserção de JSON-LD (`NGO`) em `app/layout.tsx`.
+  * **Correção Editorial na Grade de Observatórios**: Atualização do texto introdutório em `app/observatorios/page.tsx` e inclusão de badge visual de estado "Ativo" em `components/sections/grade-observatorios.tsx`.
+  * **Testes Automatizados**: Criação de `lib/publicacoes.test.ts` elevando a suíte para 43 testes (100% aprovados).

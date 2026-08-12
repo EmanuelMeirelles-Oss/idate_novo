@@ -49,7 +49,7 @@ export default async function Observatorios({
             : `${lista.length} observatórios permanentes`
         }
         titulo="Cada observatório é um objeto de estudo, não uma linha de serviço."
-        intro="Todos os observatórios encontram-se em constituição. As perguntas de pesquisa abaixo são a agenda declarada de cada um — publicações entram no acervo à medida que são concluídas."
+        intro="Os observatórios mantêm agenda de pesquisa aberta e monitoramento contínuo. As notas técnicas, estudos e despachos regulatórios entram no acervo à medida que as investigações avançam."
         lista={lista}
       />
     </>

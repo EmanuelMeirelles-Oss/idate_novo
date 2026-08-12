@@ -55,10 +55,16 @@ export function Footer() {
         </div>
       </Container>
 
-      <Container className="mt-16 border-t border-fio pt-8">
+      <Container className="mt-16 border-t border-fio pt-8 flex flex-wrap items-center justify-between gap-4">
         <p className="font-mono text-[0.625rem] tracking-[0.1em] text-fumaca">
           © {ano} {SITE.nomeCompleto.toUpperCase()}
         </p>
+        <Link
+          href="/privacidade"
+          className="font-mono text-[0.625rem] tracking-[0.1em] text-fumaca hover:text-cobalto-claro transition-colors"
+        >
+          Privacidade & LGPD
+        </Link>
       </Container>
     </footer>
   );

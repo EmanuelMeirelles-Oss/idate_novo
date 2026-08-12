@@ -3,7 +3,7 @@ import { Lema } from "@/components/sections/lema";
 import { Eixos } from "@/components/sections/eixos";
 import { GradeObservatorios } from "@/components/sections/grade-observatorios";
 import { Esteira } from "@/components/sections/esteira";
-import { Banda } from "@/components/sections/banda";
+import { AcervoDestaque } from "@/components/sections/acervo-destaque";
 import { Portas } from "@/components/sections/portas";
 import { HOME } from "@/content/home";
 import { OBSERVATORIOS } from "@/content/observatorios";
@@ -22,9 +22,9 @@ export default function Home() {
         cta={HOME.observatorios.cta}
       />
       <Esteira {...HOME.esteira} />
-      <Banda {...HOME.biblioteca} />
+      <AcervoDestaque />
       <Portas
-        rotulo="02 — Duas portas"
+        rotulo="03 — Duas portas"
         titulo={HOME.portas.titulo}
         lista={HOME.portas.lista}
       />

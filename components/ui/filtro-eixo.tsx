@@ -14,15 +14,19 @@ export function FiltroEixo({
   opcoes,
   ativo,
   baseHref,
+  paramName = "eixo",
+  ariaLabel = "Filtrar por eixo",
 }: {
   opcoes: readonly OpcaoFiltro[];
   ativo?: string;
   baseHref: string;
+  paramName?: string;
+  ariaLabel?: string;
 }) {
   return (
-    <nav aria-label="Filtrar observatórios por eixo" className="flex flex-wrap gap-2">
+    <nav aria-label={ariaLabel} className="flex flex-wrap gap-2">
       {opcoes.map((opcao) => {
-        const href = opcao.valor ? `${baseHref}?eixo=${opcao.valor}` : baseHref;
+        const href = opcao.valor ? `${baseHref}?${paramName}=${opcao.valor}` : baseHref;
         const estaAtivo = opcao.valor === ativo;
 
         return (
