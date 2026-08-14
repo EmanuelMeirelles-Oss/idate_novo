@@ -73,3 +73,23 @@
   * **SEO Técnico & Schema.org**: Criação de `app/sitemap.ts`, `app/robots.ts` e inserção de JSON-LD (`NGO`) em `app/layout.tsx`.
   * **Correção Editorial na Grade de Observatórios**: Atualização do texto introdutório em `app/observatorios/page.tsx` e inclusão de badge visual de estado "Ativo" em `components/sections/grade-observatorios.tsx`.
   * **Testes Automatizados**: Criação de `lib/publicacoes.test.ts` elevando a suíte para 43 testes (100% aprovados).
+
+### [14/08/2026] — Expansão do Acervo Técnico: ANEEL (CDE 2026), ANA (NR 13 Saneamento), STJ (TUST/TUSD) e Novo Observatório
+* **Demanda**: Pesquisa autônoma e indexação de dados oficiais reais para ampliação do acervo de estudos e ativação de novos observatórios temáticos.
+* **Solução Implementada**:
+  * **Novo Observatório Criado (`content/observatorios.ts`)**: *Observatório da Transição Energética e Descarbonização* (`transicao-energetica`, Eixo Energia), com escopo centrado na Lei nº 14.948/2024 (Marco Legal do Hidrogênio Sustentável) e mercado regulado de carbono.
+  * **Promoção de Observatórios para `ativo`**:
+    * *Observatório Nacional da Energia* (`energia`);
+    * *Observatório Nacional das Águas* (`aguas`);
+    * *Observatório de Tarifas Públicas* (`tarifas-publicas`).
+  * **Novos Estudos e Notas Técnicas Cadastrados (`content/publicacoes.ts`)**:
+    * **Energia**: *Orçamento da CDE 2026 atinge R$ 52,7 bilhões: Pressão dos subsídios de GD e amortização via Uso do Bem Público* (Estudo, ANEEL/CCEE).
+    * **Águas/Saneamento**: *Norma de Referência ANA nº 13/2025: Padronização da estrutura tarifária e diretrizes da Tarifa Social no Saneamento* (Nota Técnica, ANA).
+    * **Tarifas Públicas**: *TUSD e TUST no ICMS: A modulação de efeitos do Tema 986 pelo STJ e a afetação do Tema 1429* (Jurisprudência Comentada, STJ/STF).
+  * **Radar Regulatório Atualizado (`content/radar.ts`)**:
+    * Novos monitoramentos de atos da ANEEL, ANA e STJ.
+    * Inclusão de avaliações metodológicas de núcleo para os setores de Energia e Saneamento Básico.
+  * **Validação Completa**:
+    * Atualização da suíte de testes `lib/publicacoes.test.ts` e `lib/radar.test.ts` (43 testes 100% aprovados).
+    * Compilação estática do Next.js bem-sucedida (16 rotas geradas).
+

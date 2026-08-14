@@ -34,18 +34,38 @@ describe("Radar Regulatório Semanal", () => {
     expect(contarItensRadar("recursos-minerais")).toBe(3);
 
     const itensEnergia = obterItensRadar("energia");
-    expect(itensEnergia.length).toBe(0);
-    expect(contarItensRadar("energia")).toBe(0);
+    expect(itensEnergia.length).toBe(1);
+    expect(contarItensRadar("energia")).toBe(1);
+
+    const itensAguas = obterItensRadar("aguas");
+    expect(itensAguas.length).toBe(1);
+    expect(contarItensRadar("aguas")).toBe(1);
+
+    const itensTarifas = obterItensRadar("tarifas-publicas");
+    expect(itensTarifas.length).toBe(1);
+    expect(contarItensRadar("tarifas-publicas")).toBe(1);
+
+    const itensTerras = obterItensRadar("terras");
+    expect(itensTerras.length).toBe(0);
+    expect(contarItensRadar("terras")).toBe(0);
   });
 
   it("deve conter análise metodológica com os 3 critérios do IDATE", () => {
-    const analise = obterAnaliseRadar("recursos-minerais");
-    expect(analise).toBeDefined();
-    if (analise) {
-      expect(analise.criterios.recorrencia).toBeDefined();
-      expect(analise.criterios.recorrencia.status).toBe("em_maturacao");
-      expect(analise.criterios.relevanciaColetiva.status).toBe("atendido");
-      expect(analise.criterios.viabilidadeApuracao.status).toBe("atendido");
+    const analiseMinerais = obterAnaliseRadar("recursos-minerais");
+    expect(analiseMinerais).toBeDefined();
+    if (analiseMinerais) {
+      expect(analiseMinerais.criterios.recorrencia).toBeDefined();
+      expect(analiseMinerais.criterios.recorrencia.status).toBe("em_maturacao");
+      expect(analiseMinerais.criterios.relevanciaColetiva.status).toBe("atendido");
+      expect(analiseMinerais.criterios.viabilidadeApuracao.status).toBe("atendido");
+    }
+
+    const analiseEnergia = obterAnaliseRadar("energia");
+    expect(analiseEnergia).toBeDefined();
+    if (analiseEnergia) {
+      expect(analiseEnergia.criterios.recorrencia.status).toBe("atendido");
+      expect(analiseEnergia.criterios.relevanciaColetiva.status).toBe("atendido");
+      expect(analiseEnergia.criterios.viabilidadeApuracao.status).toBe("atendido");
     }
   });
 });

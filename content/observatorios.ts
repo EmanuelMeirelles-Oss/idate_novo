@@ -51,7 +51,7 @@ export const OBSERVATORIOS: readonly Observatorio[] = [
     nome: "Observatório Nacional da Energia",
     nomeCurto: "Energia",
     eixo: "energia",
-    estado: "constituicao",
+    estado: "ativo",
     escopo:
       "Acompanha a formação de preços, os encargos setoriais e o regime jurídico da geração, transmissão e distribuição de energia elétrica no Brasil.",
     perguntas: [
@@ -65,12 +65,12 @@ export const OBSERVATORIOS: readonly Observatorio[] = [
     nome: "Observatório Nacional das Águas",
     nomeCurto: "Águas",
     eixo: "agua",
-    estado: "constituicao",
+    estado: "ativo",
     escopo:
       "Estuda o regime de outorgas, a cobrança pelo uso de recursos hídricos, os contratos de saneamento e a repartição de competências entre União, estados e municípios.",
     perguntas: [
       "Que critérios os entes federativos aplicam na cobrança pelo uso de recursos hídricos e qual sua base normativa?",
-      "Como se estruturam as revisões tarifárias nos contratos de concessão de saneamento?",
+      "Como se estruturam as revisões tarifárias nos contratos de concessão de saneamento e a aplicação das Normas de Referência da ANA?",
       "Quais conflitos de competência recorrentes surgem entre órgãos gestores de bacias hidrográficas?",
     ],
   },
@@ -121,12 +121,12 @@ export const OBSERVATORIOS: readonly Observatorio[] = [
     nome: "Observatório de Tarifas Públicas",
     nomeCurto: "Tarifas Públicas",
     eixo: "transversal",
-    estado: "constituicao",
+    estado: "ativo",
     escopo:
       "Analisa a composição, a revisão e o controle das tarifas de serviços públicos delegados, com atenção à transparência dos componentes cobrados.",
     perguntas: [
       "Que componentes integram a tarifa e quais deles são efetivamente discriminados ao usuário?",
-      "Como os tributos incidentes sobre serviços públicos delegados foram tratados pelos tribunais superiores?",
+      "Como os tributos incidentes sobre serviços públicos delegados foram tratados pelos tribunais superiores (TUST/TUSD no ICMS)?",
       "Que mecanismos de controle social sobre revisões tarifárias existem e como têm sido exercidos?",
     ],
   },
@@ -157,6 +157,20 @@ export const OBSERVATORIOS: readonly Observatorio[] = [
       "Que regimes especiais se aplicam a consumidores eletrointensivos e sob que condições são mantidos?",
       "Como se comportam os custos regulatórios sobre indústrias de uso intensivo de água?",
       "Que efeitos as alterações legislativas recentes produziram sobre contratos de longo prazo?",
+    ],
+  },
+  {
+    slug: "transicao-energetica",
+    nome: "Observatório da Transição Energética e Descarbonização",
+    nomeCurto: "Transição Energética",
+    eixo: "energia",
+    estado: "constituicao",
+    escopo:
+      "Acompanha o marco legal do hidrogênio sustentável, o mercado regulado de carbono, a integração de fontes limpas e os regimes regulatórios de descarbonização no Brasil.",
+    perguntas: [
+      "Como os incentivos tributários e creditícios do marco do hidrogênio de baixa emissão (Lei nº 14.948/2024) se harmonizam com o setor elétrico?",
+      "Que padrões de certificação de origem e governança socioambiental orientam os projetos de transição?",
+      "Como as novas exigências de descarbonização impactam os contratos legados da indústria de base?",
     ],
   },
 ] as const;

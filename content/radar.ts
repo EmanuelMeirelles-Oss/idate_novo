@@ -117,6 +117,52 @@ export const RADAR_ATUAL: CicloRadar = {
       empresasCitadas: ["Vale", "Outras mineradoras"],
       valorEnvolvido: "R$ 11.500.000.000,00",
     },
+    {
+      id: "aneel-orcamento-cde-2026-subsidios-gd",
+      titulo:
+        "ANEEL aprova proposta de R$ 52,7 bilhões para CDE em 2026 e mobiliza R$ 5,48 bi de UBP para conter tarifas",
+      fonte: "ANEEL (Processo Tarifário CDE 2026)",
+      orgao: "ANEEL",
+      publicadoEm: "2026-08-08",
+      url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026",
+      resumo:
+        "A ANEEL aprovou o orçamento da Conta de Desenvolvimento Energético para 2026 em R$ 52,7 bilhões, com R$ 47,8 bilhões rateados na tarifa de uso (CDE-Uso), sob forte pressão da expansão dos subsídios de Geração Distribuída (+87,4%). Para conter reajustes médios que ultrapassariam 10%, a agência liberou R$ 5,48 bi em repactuação do Uso do Bem Público (UBP).",
+      observatorio: "energia",
+      perguntaVinculada:
+        "Como os encargos setoriais se distribuem entre as classes de consumo e que critérios sustentam essa repartição?",
+      empresasCitadas: ["Distribuidoras do SIN", "Câmera de Comercialização de Energia Elétrica (CCEE)"],
+      valorEnvolvido: "R$ 52.700.000.000,00",
+    },
+    {
+      id: "ana-norma-referencia-13-saneamento-estrutura-tarifaria",
+      titulo:
+        "ANA edita Norma de Referência nº 13/2025 para padronizar estruturas tarifárias e Tarifa Social no saneamento",
+      fonte: "ANA (Resolução nº 271/2025)",
+      orgao: "ANA",
+      publicadoEm: "2026-08-09",
+      url: "https://www.gov.br/ana/pt-br/assuntos/saneamento-basico",
+      resumo:
+        "A ANA publicou a Norma de Referência nº 13/2025 estabelecendo diretrizes nacionais obrigatórias para a conformação de estruturas tarifárias e a implementação da Tarifa Social da água pelas mais de 80 agências reguladoras infranacionais no Brasil.",
+      observatorio: "aguas",
+      perguntaVinculada:
+        "Como se estruturam as revisões tarifárias nos contratos de concessão de saneamento e a aplicação das Normas de Referência da ANA?",
+      estruturasCitadas: ["Sistemas de Abastecimento de Água e Esgotamento Sanitário"],
+    },
+    {
+      id: "stj-afetacao-tema-1429-tusd-tust-icms",
+      titulo:
+        "STJ afeta Tema 1429 para dirimir controvérsias residuais e repetição de indébito de TUST/TUSD no ICMS",
+      fonte: "Superior Tribunal de Justiça (Tema Repetitivo 1429)",
+      orgao: "STJ",
+      publicadoEm: "2026-08-10",
+      url: "https://www.stj.jus.br",
+      resumo:
+        "Após pacificar a inclusão de TUST e TUSD na base de cálculo do ICMS no Tema 986 e ter a competência infraconstitucional reafirmada pelo STF, o STJ afetou o Tema 1429 para uniformizar a disciplina da modulação temporal, honorários sucumbenciais e repetição de indébito para contribuintes que pagaram o tributo sob contestação.",
+      observatorio: "tarifas-publicas",
+      perguntaVinculada:
+        "Como os tributos incidentes sobre serviços públicos delegados foram tratados pelos tribunais superiores (TUST/TUSD no ICMS)?",
+      empresasCitadas: ["Grandes Consumidores Industriais", "Concessionárias de Distribuição"],
+    },
   ],
   analises: [
     {
@@ -148,6 +194,66 @@ export const RADAR_ATUAL: CicloRadar = {
       },
       parecerTecnico:
         "Manter o tema em observação ativa no acervo temático do Observatório de Recursos Minerais. A abertura formal de um núcleo autônomo dependerá do monitoramento de despachos e autuações subsequentes nas próximas semanas.",
+    },
+    {
+      observatorio: "energia",
+      tema: "Encargos Setoriais, Subsídios de GD e Impacto na Tarifa de Energia (Orçamento CDE 2026)",
+      status: "em_observacao",
+      statusRotulo: "Em Observação Ativa — Vigilância Contínua",
+      resumo:
+        "A escalada nominal do orçamento da CDE para R$ 52,7 bi e o uso excepcional de receitas de UBP para atenuar reajustes tarifários refletem assimetrias regulatórias estruturais na partilha de custos entre classes de consumo.",
+      criterios: {
+        recorrencia: {
+          status: "atendido",
+          titulo: "Recorrência documentada",
+          detalhe:
+            "Série histórica de 15 anos com crescimento superior a 300% no volume financeiro dos encargos e revisões orçamentárias anuais sistemáticas pela ANEEL.",
+        },
+        relevanciaColetiva: {
+          status: "atendido",
+          titulo: "Relevância coletiva",
+          detalhe:
+            "Impacto direto sobre o custo de vida de todos os consumidores de energia elétrica no Brasil e sobre a competitividade estrutural da indústria nacional.",
+        },
+        viabilidadeApuracao: {
+          status: "atendido",
+          titulo: "Viabilidade de apuração",
+          detalhe:
+            "Dados orçamentários abertos da ANEEL, notas técnicas da CCEE e relatórios anuais da CDE disponíveis em fontes públicas.",
+        },
+      },
+      parecerTecnico:
+        "Indexado como estudo técnico de referência no Observatório Nacional da Energia, com acompanhamento das deliberações sobre aplicação da Lei nº 15.269/2025.",
+    },
+    {
+      observatorio: "aguas",
+      tema: "Uniformização Regulatória Infranacional no Saneamento Básico (Norma de Referência ANA nº 13/2025)",
+      status: "em_observacao",
+      statusRotulo: "Em Observação Ativa — Adesão Infranacional",
+      resumo:
+        "A edição da NR nº 13/2025 inaugura novo padrão de exigibilidade para estruturas tarifárias e Tarifa Social junto a mais de 80 entidades reguladoras infranacionais.",
+      criterios: {
+        recorrencia: {
+          status: "em_maturacao",
+          titulo: "Recorrência documentada",
+          detalhe:
+            "Ciclo de edição de Normas de Referência pela ANA (NRs 12 a 15 em 2025/2026) em processo contínuo de implementação federativa.",
+        },
+        relevanciaColetiva: {
+          status: "atendido",
+          titulo: "Relevância coletiva",
+          detalhe:
+            "Garante proteção social de acesso à água para famílias de baixa renda e segurança jurídica para investimentos de universalização até 2033.",
+        },
+        viabilidadeApuracao: {
+          status: "atendido",
+          titulo: "Viabilidade de apuração",
+          detalhe:
+            "Resoluções e consultas públicas da ANA amplamente acessíveis no portal institucional e no Diário Oficial da União.",
+        },
+      },
+      parecerTecnico:
+        "Acompanhar o índice de adesão dos estados e municípios à NR 13/2025 como métrica central de conformidade regulatória no Observatório Nacional das Águas.",
     },
   ],
 };
