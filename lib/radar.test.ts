@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
 import {
   RADAR_ATUAL,
+  HISTORICO_RADAR,
   obterItensRadar,
   obterAnaliseRadar,
   contarItensRadar,
+  obterTodosCiclos,
 } from "@/content/radar";
 import { OBSERVATORIOS } from "@/content/observatorios";
 
@@ -83,5 +85,16 @@ describe("Radar Regulatório Semanal", () => {
 
     expect(RADAR_ATUAL.fontesSemOcorrencias).toBeDefined();
     expect(RADAR_ATUAL.fontesSemOcorrencias?.length).toBe(3);
+  });
+
+  it("deve suportar histórico de ciclos anteriores arquivados", () => {
+    const ciclos = obterTodosCiclos();
+    expect(ciclos.length).toBeGreaterThanOrEqual(2);
+    expect(HISTORICO_RADAR[0].periodo.inicio).toBe("2026-08-10");
+    expect(HISTORICO_RADAR[1].periodo.inicio).toBe("2026-08-03");
+
+    // Consulta específica por ciclo anterior
+    const itensCicloAnterior = obterItensRadar(undefined, "ciclo-2026-08-03-2026-08-10");
+    expect(itensCicloAnterior.length).toBe(4);
   });
 });

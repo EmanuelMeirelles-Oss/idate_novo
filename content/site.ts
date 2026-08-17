@@ -24,6 +24,7 @@ export const LEMA =
 export const NAVEGACAO = [
   { rotulo: "O Instituto", href: "/instituto" },
   { rotulo: "Observatórios", href: "/observatorios" },
+  { rotulo: "Radar Regulatório", href: "/radar" },
   { rotulo: "Biblioteca", href: "/biblioteca" },
   { rotulo: "Como investigamos", href: "/metodologia" },
   { rotulo: "Contato", href: "/contato" },

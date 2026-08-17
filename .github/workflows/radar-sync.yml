@@ -1,0 +1,38 @@
+name: Radar Regulatório Sync
+
+on:
+  repository_dispatch:
+    types: [radar_update]
+  workflow_dispatch:
+    inputs:
+      ciclo_json:
+        description: "Payload JSON do ciclo de radar"
+        required: false
+  schedule:
+    # Executa toda segunda-feira às 08:00 UTC (05:00 BRT)
+    - cron: "0 8 * * 1"
+
+jobs:
+  sync-radar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Instalar Dependências
+        run: npm ci
+
+      - name: Executar Testes Unitários
+        run: npm run test
+
+      - name: Validar Build Estático
+        run: npm run build

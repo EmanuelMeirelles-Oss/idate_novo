@@ -84,10 +84,10 @@ export function AcervoDestaque() {
 
                 <div className="mt-8 pt-4 border-t border-fio/60">
                   <Link
-                    href="/observatorios/energia#radar"
+                    href="/radar"
                     className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-cobalto-claro hover:text-osso transition-colors"
                   >
-                    Ver análise do radar completo
+                    Acessar Radar Regulatório Completo
                     <ArrowUpRight size={14} weight="bold" />
                   </Link>
                 </div>

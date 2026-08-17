@@ -106,9 +106,20 @@
     * Adição do id de âncora `id="radar"` para navegação direta.
     * Componente auxiliar `BadgeCriterio` com suporte a estados `atendido`, `em_maturacao` e `insuficiente` com ícones semânticos.
     * Atualização dos textos de destaque e rotas na página inicial.
-  * **Estabilidade & Testes (`lib/radar.test.ts` e `vitest.config.ts`)**:
-    * Configuração de `pool: "threads"` no Vitest para execução ultra-rápida e resiliente em Windows.
-    * Suíte de testes atualizada e validada com 41 testes (100% de aprovação).
-    * Build estático de produção do Next.js gerado com sucesso (16 rotas SSG/Static).
+### [17/08/2026] — Criação do Hub Dedicado /radar e Pipeline de Automação com Claude
+* **Demanda**: Criação de área centralizada no site para o Radar Regulatório Semanal (Opção 1) com navegação transversal por ciclo/setor e integração com a tarefa agendada do Claude na nuvem.
+* **Solução Implementada**:
+  * **Página Dedicada `/radar` (`app/radar/page.tsx`)**:
+    * Visão panorâmica de todos os atos do ciclo ativo com métricas de impacto, filtro rápido por observatório e seletor de ciclos históricos arquivados (`HISTORICO_RADAR`).
+    * Painel completo de Triagem Metodológica (Recorrência, Relevância Coletiva, Viabilidade) e Governança Editorial (descartes e fontes sem ocorrências).
+    * Links de navegação atualizados em `content/site.ts` e indexação no `app/sitemap.ts`.
+  * **Pipeline de Automação & Ingestão Contínua**:
+    * **API Route Webhook (`app/api/radar/ingest/route.ts`)**: Endpoint seguro com `RADAR_SYNC_SECRET` para recebimento de payloads JSON da pesquisa agendada.
+    * **Script de Ingestão (`_scripts/ingest-radar.mjs`)**: Validador e sincronizador de payloads locais ou via pipeline.
+    * **Workflow GitHub Actions (`.github/workflows/radar-sync.yml`)**: Suporte a disparos via `repository_dispatch` (evento `radar_update`) para CI/CD automático.
+    * **Documentação Técnica (`docs/automacao-radar-claude.md`)**: Guia detalhado com o prompt do Claude, schema JSON e as 3 opções de conexão com a Vercel.
+  * **Validação**:
+    * Suíte de testes atualizada (`lib/radar.test.ts`) com 42 testes 100% aprovados.
+    * Compilação de produção Next.js estática e dinâmica bem-sucedida (18 rotas geradas).
 
 
