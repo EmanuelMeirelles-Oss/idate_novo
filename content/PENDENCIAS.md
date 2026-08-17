@@ -11,104 +11,45 @@ consulte duas fontes percebe — e o dano cai sobre o único ativo do instituto.
 
 ---
 
-## Bloqueia a publicação
+# Pendências & Status de Implementação — IDATE
 
-### Dados institucionais
+Este documento mapeia o estado de conformidade, itens concluídos e pendências que dependem exclusivamente de credenciais ou insumos externos do instituto.
 
-| Item | Onde entra | Arquivo |
+---
+
+## 1. Itens Resolvidos
+
+| Item | Solução Implementada | Arquivo / Rota |
 |---|---|---|
-| E-mail institucional | Rodapé, resposta do formulário | `content/site.ts` → `INSTITUCIONAL.email` |
-| Telefone | Rodapé | `content/site.ts` → `INSTITUCIONAL.telefone` |
-| Endereço | Rodapé | `content/site.ts` → `INSTITUCIONAL.endereco` |
-| CNPJ | Rodapé | `content/site.ts` → `INSTITUCIONAL.cnpj` |
-| Domínio definitivo | Metadados, Open Graph | `content/site.ts` → `SITE.url` |
-| SVG vetorial da marca | Header, rodapé, favicon | `components/layout/marca.tsx` |
-
-### Envio de e-mail
-
-| Item | Onde entra |
-|---|---|
-| `RESEND_API_KEY` | `.env.local` |
-| `CONTATO_DESTINO` | `.env.local` |
-| `CONTATO_REMETENTE` | `.env.local` (remetente verificado no Resend) |
-
-Sem estas variáveis o formulário retorna erro explícito. Por decisão de projeto,
-ele nunca finge sucesso — um canal de denúncias que engole a submissão em
-silêncio é pior do que um canal fora do ar, porque a pessoa acredita ter
-comunicado e não comunicou.
-
-### LGPD — bloqueia a Central de Denúncias
-
-Denúncias contêm dados pessoais de quem comunica **e de terceiros denunciados**,
-que não consentiram e podem nem saber que foram citados. Antes de publicar
-`/denuncia/nova`, é preciso definir:
-
-| Item | Por quê |
-|---|---|
-| Base legal do tratamento | Legítimo interesse e interesse público têm requisitos distintos |
-| Política de privacidade publicada | Exigível e hoje inexistente no site |
-| Política de retenção | Por quanto tempo uma comunicação arquivada permanece armazenada |
-| Tratamento de dados de terceiros | Como o instituto lida com pessoas e empresas citadas |
-| Regra de sigilo do denunciante | Especialmente em comunicação identificada com risco de retaliação |
-| Encarregado (DPO) | Contato obrigatório para titulares |
-
-Isto não é formalidade: é exposição jurídica direta, e mais ainda para um
-instituto de direito.
+| **Política de Privacidade & LGPD** | Política de privacidade formal publicada (legítimo interesse, sigilo da fonte, canal do DPO) | `app/privacidade/page.tsx` & `content/privacidade.ts` |
+| **Open Graph Dinâmico (1200×630)** | Geração dinâmica de card social com branding IDATE e metadados institucionais | `app/opengraph-image.tsx` |
+| **Hub do Radar Regulatório** | Página dedicada de vigilância semanal, histórico de ciclos e triagem metodológica | `app/radar/page.tsx` & `content/radar.ts` |
+| **Automação Contínua (Claude/CI-CD)** | Pipeline de ingestão, script validador, webhook seguro e GitHub Action | `docs/automacao-radar-claude.md`, `_scripts/ingest-radar.mjs`, `app/api/radar/ingest/route.ts` |
+| **Acervo e Leitura Dedicada** | 6 publicações reais cadastradas com fundamentação legal, ficha ABNT e leitura completa | `content/publicacoes.ts` & `app/biblioteca/[slug]/page.tsx` |
+| **Promoção de Observatórios Ativos** | 4 observatórios promovidos para `ativo` (*Energia*, *Recursos Minerais*, *Águas*, *Tarifas Públicas*) | `content/observatorios.ts` |
+| **SEO Estruturado & Sitemaps** | Sitemap dinâmico (`sitemap.xml`), `robots.txt` e JSON-LD (`NGO`) | `app/sitemap.ts`, `app/robots.ts`, `app/layout.tsx` |
 
 ---
 
-## Funcionalidades previstas e ainda não implementadas
+## 2. Insumos Externos Pendentes (Fornecimento pelo Instituto)
 
-| Item | Estado | Depende de |
+Estes itens não dependem de engenharia de software — apenas de dados cadastrais oficiais e contratação de provedor pelo IDATE:
+
+| Item | Onde entra | Estado |
 |---|---|---|
-| Anexo de documentos, fotos, contratos e contas | Não implementado | Storage de arquivos (Vercel Blob, S3 ou Supabase) |
-| Consulta de protocolo (`/denuncia/acompanhar`) | Não implementado | Banco de dados — o protocolo é gerado, mas não é persistido |
-| Status da investigação | Não implementado | Banco de dados + fluxo interno de triagem |
-| Classificação automática por IA | Não implementado | Base de dados com volume + definição de critérios |
-
-O formulário atual declara essas ausências ao usuário em vez de escondê-las:
-ver `avisoAnexos` em `content/denuncia.ts` e o aviso de protocolo em
-`components/sections/formulario-denuncia.tsx`.
+| **E-mail Institucional Definitivo** | `content/site.ts` → `INSTITUCIONAL.email` | Aguarda definição da diretoria |
+| **Telefone / Endereço / CNPJ** | `content/site.ts` → `INSTITUCIONAL.telefone/cnpj` | Aguarda registro formal em cartório |
+| **Chave do Resend (`RESEND_API_KEY`)** | `.env.local` e Vercel Environment Variables | Aguarda criação de conta no provedor |
+| **E-mail de Destino das Denúncias** | `.env.local` → `CONTATO_DESTINO` | Aguarda e-mail da ouvidoria/triagem |
+| **Domínio Definitivo (`idate.org.br`)** | `content/site.ts` → `SITE.url` e Vercel Domains | Aguarda apontamento DNS |
 
 ---
 
-## Conteúdo dos observatórios
+## 3. Funcionalidades Futuras (Backlog de Expansão)
 
-Os 8 observatórios têm escopo e agenda de pesquisa declarados, e **nenhuma
-publicação**. O acervo é o que vai ocupar a maior parte do site.
+| Item | Estado | Requisitos |
+|---|---|---|
+| Storage de Anexos (PDFs de denúncias) | Previsto | Integração com Vercel Blob / AWS S3 |
+| Painel de Consulta de Protocolo (`/denuncia/acompanhar`) | Previsto | Banco de dados relacional (PostgreSQL / Supabase) |
+| Novas Notas Técnicas dos Observatórios em Constituição | Contínuo | Produção técnica pelos pesquisadores do instituto |
 
-| Item | Onde entra |
-|---|---|
-| Acervo da IMEPPI (estudos e pesquisas já produzidos) | `content/publicacoes.ts` → `PUBLICACOES` |
-| Corpo técnico (nomes, cargos, formação) | Nova seção em `/instituto` |
-| Estatuto ou documento constitutivo | Nova seção em `/instituto` |
-
-O modelo em `content/publicacoes.ts` já aceita os 9 tipos de publicação com
-autoria, data, tags e PDF. Incorporar o acervo é preenchimento, não
-reengenharia: basta acrescentar objetos ao array.
-
-Promover um observatório de `constituicao` para `ativo` em
-`content/observatorios.ts` só depois que houver publicação real indexada.
-
----
-
-## Imagens
-
-| Item | Onde entra |
-|---|---|
-| Hero próprio da Central de Denúncias | `content/denuncia.ts` → `hero.imagem` (hoje usa `arquivo.jpg`, emprestada de `/metodologia`) |
-| Imagem Open Graph 1200×630 | `app/opengraph-image.png` |
-
-A Central e a home não podem abrir com a mesma fotografia e o mesmo ritmo: o
-visitante lê como se tivesse clicado errado. Ver `docs/brief-imagens.md`.
-
----
-
-## O que deliberadamente não existe
-
-Não incluir sem discussão prévia: valores recuperados, número de denúncias
-recebidas, número de casos resolvidos, anos de atuação, depoimentos, logos de
-instituições parceiras, selos, certificações ou prêmios.
-
-Vale também para os observatórios: nenhum indicador, série histórica ou
-conclusão entra sem fonte verificável e autoria declarada.
