@@ -17,6 +17,12 @@ export interface ItemRadar {
 
 export type StatusCriterio = "atendido" | "em_maturacao" | "insuficiente";
 
+export interface CriterioMetodologico {
+  readonly status: StatusCriterio;
+  readonly titulo: string;
+  readonly detalhe: string;
+}
+
 export interface AnaliseNucleoSemanal {
   readonly observatorio: IdObservatorio;
   readonly tema: string;
@@ -24,23 +30,25 @@ export interface AnaliseNucleoSemanal {
   readonly statusRotulo: string;
   readonly resumo: string;
   readonly criterios: {
-    readonly recorrencia: {
-      readonly status: StatusCriterio;
-      readonly titulo: string;
-      readonly detalhe: string;
-    };
-    readonly relevanciaColetiva: {
-      readonly status: StatusCriterio;
-      readonly titulo: string;
-      readonly detalhe: string;
-    };
-    readonly viabilidadeApuracao: {
-      readonly status: StatusCriterio;
-      readonly titulo: string;
-      readonly detalhe: string;
-    };
+    readonly recorrencia: CriterioMetodologico;
+    readonly relevanciaColetiva: CriterioMetodologico;
+    readonly viabilidadeApuracao: CriterioMetodologico;
   };
   readonly parecerTecnico: string;
+}
+
+export interface ItemDescartadoRadar {
+  readonly titulo: string;
+  readonly fonte: string;
+  readonly orgao: "ANM" | "ANEEL" | "ANA" | "DOU" | "MPF" | "STF" | "STJ";
+  readonly publicadoEm: string;
+  readonly motivoDescarte: string;
+}
+
+export interface FonteSemOcorrencia {
+  readonly orgao: string;
+  readonly url?: string;
+  readonly observacao: string;
 }
 
 export interface CicloRadar {
@@ -52,208 +60,172 @@ export interface CicloRadar {
   readonly fontesVigiadas: readonly string[];
   readonly itens: readonly ItemRadar[];
   readonly analises: readonly AnaliseNucleoSemanal[];
+  readonly itensDescartados?: readonly ItemDescartadoRadar[];
+  readonly fontesSemOcorrencias?: readonly FonteSemOcorrencia[];
 }
 
 export const RADAR_ATUAL: CicloRadar = {
   periodo: {
-    inicio: "2026-08-03",
-    fim: "2026-08-10",
-    rotulo: "03 a 10/08/2026",
+    inicio: "2026-08-10",
+    fim: "2026-08-17",
+    rotulo: "10 a 17/08/2026",
   },
   fontesVigiadas: ["DOU", "ANM", "ANEEL", "ANA"],
   itens: [
     {
-      id: "anm-exigencias-barragens-vale-anglo-greenmetals",
+      id: "aneel-repasse-5-bi-cde-norte-nordeste",
       titulo:
-        "ANM fixa prazos para exigências técnicas em barragens da Vale, Anglo American e Green Metals e indefere alteração cadastral",
-      fonte: "ANM (Despacho, Relação nº 21/2026) — via Atlas Público",
-      orgao: "ANM",
-      publicadoEm: "2026-08-04",
-      url: "https://atlaspublico.com.br/noticias/anm-fixa-prazos-para-exigencias-tecnicas-em-barragens-da-76870",
-      resumo:
-        "A ANM fixou prazos para exigências técnicas em três barragens de mineração em Minas Gerais — Maravilhas II (Vale, Itabirito), Mãe D'água (Green Metals, Nova Era) e a barragem de rejeitos da Anglo American (Santo Antônio do Grama, vinculada ao mineroduto do Sistema Minas-Rio) — e negou pedido de alteração cadastral da Anglo American. A barragem Mãe D'água está classificada como alto risco e é alvo de ação civil pública do MPF desde maio/2026 por falhas de segurança básica.",
-      observatorio: "recursos-minerais",
-      perguntaVinculada:
-        "Que obrigações de recuperação ambiental incidem sobre áreas lavradas e como são fiscalizadas?",
-      empresasCitadas: ["Vale", "Anglo American", "Green Metals"],
-      estruturasCitadas: [
-        "Maravilhas II (Itabirito/MG)",
-        "Mãe D'água (Nova Era/MG)",
-        "Barragem do Sistema Minas-Rio (Santo Antônio do Grama/MG)",
-      ],
-    },
-    {
-      id: "anm-exigencia-campo-grande-vale-extrativa",
-      titulo:
-        "ANM determina cumprimento de exigência técnica em barragem Campo Grande da Vale e nega prorrogação à Extrativa Metalurgia",
-      fonte: "ANM (Despacho, Relação nº 24/2026) — via Atlas Público",
-      orgao: "ANM",
-      publicadoEm: "2026-08-05",
-      url: "https://atlaspublico.com.br/noticias/anm-determina-cumprimento-de-exigencia-tecnica-em-barragem-77137",
-      resumo:
-        "A ANM determinou à Vale o cumprimento de exigência técnica na barragem Campo Grande (Mina Alegria, Mariana/MG, em descaracterização) e negou à Extrativa Metalurgia prorrogação de prazo para exigências na barragem Rejeitos, além de impor nova exigência técnica com prazo de 30 dias.",
-      observatorio: "recursos-minerais",
-      perguntaVinculada:
-        "Que obrigações de recuperação ambiental incidem sobre áreas lavradas e como são fiscalizadas?",
-      empresasCitadas: ["Vale", "Extrativa Metalurgia"],
-      estruturasCitadas: [
-        "Campo Grande (Mina Alegria, Mariana/MG)",
-        "Barragem Rejeitos",
-      ],
-    },
-    {
-      id: "anm-notificacao-cfem-11-bi-vale",
-      titulo:
-        "Agência Nacional de Mineração notifica Vale e outras mineradoras a pagar R$ 11,5 bi em CFEM",
-      fonte: "ANM — via Atlas Público",
-      orgao: "ANM",
-      publicadoEm: "2026-08-05",
-      url: "https://atlaspublico.com.br/noticias/agencia-nacional-de-mineracao-notifica-vale-e-outras-77138",
-      resumo:
-        "A ANM notificou a Vale e outras mineradoras a pagar R$ 11,5 bilhões em CFEM (30 processos de cobrança, operações no Pará e em Minas Gerais), com prazo de 10 dias para pagamento ou defesa antes da inscrição em dívida ativa.",
-      observatorio: "recursos-minerais",
-      perguntaVinculada:
-        "Como se distribui a compensação financeira pela exploração mineral entre os entes federativos?",
-      empresasCitadas: ["Vale", "Outras mineradoras"],
-      valorEnvolvido: "R$ 11.500.000.000,00",
-    },
-    {
-      id: "aneel-orcamento-cde-2026-subsidios-gd",
-      titulo:
-        "ANEEL aprova proposta de R$ 52,7 bilhões para CDE em 2026 e mobiliza R$ 5,48 bi de UBP para conter tarifas",
-      fonte: "ANEEL (Processo Tarifário CDE 2026)",
+        "ANEEL homologa repasse preliminar de R$ 5,48 bilhões às distribuidoras para reduzir tarifas no Norte e Nordeste",
+      fonte: "ANEEL (Notícias Oficiais)",
       orgao: "ANEEL",
-      publicadoEm: "2026-08-08",
-      url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026",
+      publicadoEm: "2026-08-11",
+      url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/aneel-homologa-repasse-preliminar-de-r-5-48-bilhoes-as-distribuidoras-recurso-utilizado-para-reduzir-tarifas-de-energia-no-norte-e-nordeste",
       resumo:
-        "A ANEEL aprovou o orçamento da Conta de Desenvolvimento Energético para 2026 em R$ 52,7 bilhões, com R$ 47,8 bilhões rateados na tarifa de uso (CDE-Uso), sob forte pressão da expansão dos subsídios de Geração Distribuída (+87,4%). Para conter reajustes médios que ultrapassariam 10%, a agência liberou R$ 5,48 bi em repactuação do Uso do Bem Público (UBP).",
+        "A ANEEL homologou repasse preliminar de R$ 5,48 bilhões às distribuidoras com foco na redução tarifária nas regiões Norte e Nordeste. Os valores decorrem da renegociação de Uso de Bem Público (UBP) de usinas hidrelétricas, convertida em aporte antecipado à Conta de Desenvolvimento Energético (CDE) — encargo setorial redirecionado para aliviar a pressão tarifária regional.",
       observatorio: "energia",
       perguntaVinculada:
         "Como os encargos setoriais se distribuem entre as classes de consumo e que critérios sustentam essa repartição?",
-      empresasCitadas: ["Distribuidoras do SIN", "Câmera de Comercialização de Energia Elétrica (CCEE)"],
-      valorEnvolvido: "R$ 52.700.000.000,00",
+      empresasCitadas: ["Distribuidoras do Norte e Nordeste", "CCEE"],
+      valorEnvolvido: "R$ 5.480.000.000,00",
     },
     {
-      id: "ana-norma-referencia-13-saneamento-estrutura-tarifaria",
+      id: "aneel-revisao-tarifaria-cea-amapa",
       titulo:
-        "ANA edita Norma de Referência nº 13/2025 para padronizar estruturas tarifárias e Tarifa Social no saneamento",
-      fonte: "ANA (Resolução nº 271/2025)",
-      orgao: "ANA",
-      publicadoEm: "2026-08-09",
-      url: "https://www.gov.br/ana/pt-br/assuntos/saneamento-basico",
+        "ANEEL decide nova data para reajuste e revisão de tarifas da CEA (Amapá)",
+      fonte: "ANEEL (Notícias Oficiais)",
+      orgao: "ANEEL",
+      publicadoEm: "2026-08-11",
+      url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/agencia-decide-nova-data-para-reajuste-e-revisao-de-tarifas-da-cea-amapa",
       resumo:
-        "A ANA publicou a Norma de Referência nº 13/2025 estabelecendo diretrizes nacionais obrigatórias para a conformação de estruturas tarifárias e a implementação da Tarifa Social da água pelas mais de 80 agências reguladoras infranacionais no Brasil.",
-      observatorio: "aguas",
+        "A ANEEL deliberou nova data para o processo de reajuste e revisão tarifária periódica da concessionária CEA Equatorial (Amapá), com reflexo direto no cronograma de repasse e nas tarifas aplicáveis aos consumidores da área de concessão.",
+      observatorio: "energia",
       perguntaVinculada:
-        "Como se estruturam as revisões tarifárias nos contratos de concessão de saneamento e a aplicação das Normas de Referência da ANA?",
-      estruturasCitadas: ["Sistemas de Abastecimento de Água e Esgotamento Sanitário"],
+        "Que efeitos as revisões tarifárias periódicas produzem sobre consumidores industriais e rurais?",
+      empresasCitadas: ["CEA Equatorial (Amapá)"],
     },
     {
-      id: "stj-afetacao-tema-1429-tusd-tust-icms",
+      id: "anm-distribuicao-cfem-504-milhoes-pgrm",
       titulo:
-        "STJ afeta Tema 1429 para dirimir controvérsias residuais e repetição de indébito de TUST/TUSD no ICMS",
-      fonte: "Superior Tribunal de Justiça (Tema Repetitivo 1429)",
-      orgao: "STJ",
+        "Mais de R$ 504 milhões em CFEM são distribuídos a estados e municípios produtores",
+      fonte: "ANM (Notícias Oficiais)",
+      orgao: "ANM",
+      publicadoEm: "2026-08-14",
+      url: "https://www.gov.br/anm/pt-br/assuntos/noticias/mais-de-r-504-milhoes-em-cfem-sao-distribuidos-a-estados-e-municipios-produtores",
+      resumo:
+        "A ANM realizou a distribuição de mais de R$ 504 milhões em royalties da CFEM a estados e municípios produtores. O repasse marcou o início da operação da Plataforma de Gestão de Royalties Minerais (PGRM), responsável por quase 89% de toda a arrecadação apurada no período.",
+      observatorio: "recursos-minerais",
+      perguntaVinculada:
+        "Como se distribui a compensação financeira pela exploração mineral entre os entes federativos?",
+      empresasCitadas: ["Mineradoras e Entes Federativos Beneficiários"],
+      valorEnvolvido: "R$ 504.000.000,00",
+    },
+    {
+      id: "anm-consulta-publica-infracoes-multas-mineracao",
+      titulo:
+        "Aberta consulta pública para revisar regras de infrações e multas na mineração",
+      fonte: "ANM (Consulta Pública, 10/08 a 24/09/2026)",
+      orgao: "ANM",
       publicadoEm: "2026-08-10",
-      url: "https://www.stj.jus.br",
+      url: "https://www.gov.br/anm/pt-br/assuntos/noticias/aberta-consulta-publica-para-revisar-regras-de-infracoes-e-multas-na-mineracao",
       resumo:
-        "Após pacificar a inclusão de TUST e TUSD na base de cálculo do ICMS no Tema 986 e ter a competência infraconstitucional reafirmada pelo STF, o STJ afetou o Tema 1429 para uniformizar a disciplina da modulação temporal, honorários sucumbenciais e repetição de indébito para contribuintes que pagaram o tributo sob contestação.",
-      observatorio: "tarifas-publicas",
+        "A ANM abriu consulta pública com prazo de contribuições de 10/08 a 24/09/2026 para revisar procedimentos de apuração de infrações, sanções e critérios de cálculo de multas na atividade minerária — afetando diretamente o regime de fiscalização que dá suporte às obrigações de recuperação ambiental em áreas lavradas.",
+      observatorio: "recursos-minerais",
       perguntaVinculada:
-        "Como os tributos incidentes sobre serviços públicos delegados foram tratados pelos tribunais superiores (TUST/TUSD no ICMS)?",
-      empresasCitadas: ["Grandes Consumidores Industriais", "Concessionárias de Distribuição"],
+        "Que obrigações de recuperação ambiental incidem sobre áreas lavradas e como são fiscalizadas?",
+      empresasCitadas: ["Setor Minerário Nacional"],
     },
   ],
   analises: [
     {
-      observatorio: "recursos-minerais",
-      tema: "Fiscalização e Segurança de Barragens de Mineração (Lei nº 12.334/2010 e Resolução ANM nº 95/2022)",
-      status: "em_observacao",
-      statusRotulo: "Em Observação Ativa — Recorrência em Maturação",
-      resumo:
-        "Três despachos independentes da ANM na mesma semana atingindo quatro mineradoras distintas (Vale, Green Metals, Anglo American e Extrativa Metalurgia) sob o mesmo regime de segurança de barragens. O caso Mãe D'água possui histórico prévio de ACP do MPF.",
-      criterios: {
-        recorrencia: {
-          status: "em_maturacao",
-          titulo: "Recorrência documentada",
-          detalhe:
-            "Aparece em despachos simultâneos de 4 empresas sob o mesmo marco normativo, mas em um recorte temporal de uma semana. Requer série temporal continuada (60 a 90 dias) para comprovar padrão regulatório consolidado.",
-        },
-        relevanciaColetiva: {
-          status: "atendido",
-          titulo: "Relevância coletiva",
-          detalhe:
-            "A estabilidade de barragens de rejeito e o cumprimento de prazos de descaracterização afetam diretamente a segurança de populações a jusante e a proteção de bacias hidrográficas em Minas Gerais.",
-        },
-        viabilidadeApuracao: {
-          status: "atendido",
-          titulo: "Viabilidade de apuração",
-          detalhe:
-            "Fontes documentais abertas suficientes: dados públicos do SIGBM/ANM, processos no SEI/ANM e autos de ação civil pública do MPF.",
-        },
-      },
-      parecerTecnico:
-        "Manter o tema em observação ativa no acervo temático do Observatório de Recursos Minerais. A abertura formal de um núcleo autônomo dependerá do monitoramento de despachos e autuações subsequentes nas próximas semanas.",
-    },
-    {
       observatorio: "energia",
-      tema: "Encargos Setoriais, Subsídios de GD e Impacto na Tarifa de Energia (Orçamento CDE 2026)",
+      tema: "Aportes de UBP na CDE e Calendário Tarifário de Distribuidoras (ANEEL)",
       status: "em_observacao",
-      statusRotulo: "Em Observação Ativa — Vigilância Contínua",
+      statusRotulo: "Lead de Monitoramento — Triagem Aberta",
       resumo:
-        "A escalada nominal do orçamento da CDE para R$ 52,7 bi e o uso excepcional de receitas de UBP para atenuar reajustes tarifários refletem assimetrias regulatórias estruturais na partilha de custos entre classes de consumo.",
-      criterios: {
-        recorrencia: {
-          status: "atendido",
-          titulo: "Recorrência documentada",
-          detalhe:
-            "Série histórica de 15 anos com crescimento superior a 300% no volume financeiro dos encargos e revisões orçamentárias anuais sistemáticas pela ANEEL.",
-        },
-        relevanciaColetiva: {
-          status: "atendido",
-          titulo: "Relevância coletiva",
-          detalhe:
-            "Impacto direto sobre o custo de vida de todos os consumidores de energia elétrica no Brasil e sobre a competitividade estrutural da indústria nacional.",
-        },
-        viabilidadeApuracao: {
-          status: "atendido",
-          titulo: "Viabilidade de apuração",
-          detalhe:
-            "Dados orçamentários abertos da ANEEL, notas técnicas da CCEE e relatórios anuais da CDE disponíveis em fontes públicas.",
-        },
-      },
-      parecerTecnico:
-        "Indexado como estudo técnico de referência no Observatório Nacional da Energia, com acompanhamento das deliberações sobre aplicação da Lei nº 15.269/2025.",
-    },
-    {
-      observatorio: "aguas",
-      tema: "Uniformização Regulatória Infranacional no Saneamento Básico (Norma de Referência ANA nº 13/2025)",
-      status: "em_observacao",
-      statusRotulo: "Em Observação Ativa — Adesão Infranacional",
-      resumo:
-        "A edição da NR nº 13/2025 inaugura novo padrão de exigibilidade para estruturas tarifárias e Tarifa Social junto a mais de 80 entidades reguladoras infranacionais.",
+        "A homologação do repasse preliminar de R$ 5,48 bi de UBP para redução tarifária no Norte/Nordeste e a fixação de nova data de revisão da CEA (Amapá) foram catalogados como leads de vigilância. O aporte atenua encargos setoriais no curto prazo, mas os atos isolados da semana não configuram, por si sós, um novo núcleo autônomo.",
       criterios: {
         recorrencia: {
           status: "em_maturacao",
           titulo: "Recorrência documentada",
           detalhe:
-            "Ciclo de edição de Normas de Referência pela ANA (NRs 12 a 15 em 2025/2026) em processo contínuo de implementação federativa.",
+            "O uso de UBP para amortecer a CDE segue a diretriz orçamentária de 2026, mas a aplicação prática em processos homologatórios específicos requer série temporal continuada para mapear o impacto consolidado por classe de consumo.",
         },
         relevanciaColetiva: {
           status: "atendido",
           titulo: "Relevância coletiva",
           detalhe:
-            "Garante proteção social de acesso à água para famílias de baixa renda e segurança jurídica para investimentos de universalização até 2033.",
+            "O repasse bilionário e os reajustes das distribuidoras afetam diretamente as tarifas de milhões de consumidores residenciais, comerciais e industriais nas regiões Norte e Nordeste.",
         },
         viabilidadeApuracao: {
           status: "atendido",
           titulo: "Viabilidade de apuração",
           detalhe:
-            "Resoluções e consultas públicas da ANA amplamente acessíveis no portal institucional e no Diário Oficial da União.",
+            "Atos homologatórios e notas técnicas disponíveis no portal oficial da ANEEL e nos registros da CCEE.",
         },
       },
       parecerTecnico:
-        "Acompanhar o índice de adesão dos estados e municípios à NR 13/2025 como métrica central de conformidade regulatória no Observatório Nacional das Águas.",
+        "Item mantido como lead de monitoramento no Observatório Nacional da Energia. Não atende isoladamente aos três critérios para constituição de núcleo autônomo de pesquisa.",
+    },
+    {
+      observatorio: "recursos-minerais",
+      tema: "Arrecadação de CFEM via PGRM e Revisão do Regime Sancionatório Mineral (ANM)",
+      status: "em_observacao",
+      statusRotulo: "Lead de Monitoramento — Triagem Aberta",
+      resumo:
+        "Distribuição de R$ 504 milhões em CFEM com estreia da plataforma PGRM (89% da arrecadação) e abertura de consulta pública para dosimetria de infrações e multas. Ambos os itens foram catalogados como leads para vigilância contínua.",
+      criterios: {
+        recorrencia: {
+          status: "em_maturacao",
+          titulo: "Recorrência documentada",
+          detalhe:
+            "A arrecadação de royalties é rotina mensal e a consulta pública iniciou em 10/08/2026. A comprovação de padrão regulatório novo depende do desfecho das contribuições (até 24/09/2026) e da apuração da arrecadação nos meses subsequentes via PGRM.",
+        },
+        relevanciaColetiva: {
+          status: "atendido",
+          titulo: "Relevância coletiva",
+          detalhe:
+            "A partilha da CFEM subsidia orçamentos públicos em centenas de municípios mineradores e o regime de multas incide sobre a recuperação socioambiental de todas as áreas lavradas do país.",
+        },
+        viabilidadeApuracao: {
+          status: "atendido",
+          titulo: "Viabilidade de apuração",
+          detalhe:
+            "Dados públicos acessíveis no portal da ANM, no sistema PGRM e nos autos da Consulta Pública de infrações e multas.",
+        },
+      },
+      parecerTecnico:
+        "Item mantido como lead de monitoramento no Observatório de Recursos Minerais. Toda decisão sobre eventual abertura de núcleo aguardará o encerramento do prazo de consulta pública em 24/09/2026.",
+    },
+  ],
+  itensDescartados: [
+    {
+      titulo:
+        "Manutenção do processo de recomendação de caducidade da concessão da Enel São Paulo",
+      fonte: "ANEEL (Notícias)",
+      orgao: "ANEEL",
+      publicadoEm: "2026-08-14",
+      motivoDescarte:
+        "Sem relação direta com as perguntas de pesquisa em aberto nos observatórios atuais. Não incluída para evitar conexões forçadas.",
+    },
+  ],
+  fontesSemOcorrencias: [
+    {
+      orgao: "DOU (Diário Oficial da União)",
+      url: "https://in.gov.br",
+      observacao:
+        "As buscas realizadas não localizaram normas/portarias/atos claramente relacionados a água, terra, mineração ou energia elétrica publicados nesta janela de 7 dias.",
+    },
+    {
+      orgao: "ANA (Agência Nacional de Águas e Saneamento Básico)",
+      url: "https://gov.br/ana",
+      observacao:
+        "Página de notícias da agência com acesso temporariamente restrito por autenticação durante a apuração; buscas alternativas sem publicações datadas entre 10 e 17/08/2026. Recomenda-se checagem manual no próximo ciclo.",
+    },
+    {
+      orgao: "ANM (Sandbox Regulatório - Tomada de Subsídios nº 04/2026)",
+      url: "https://gov.br/anm",
+      observacao:
+        "Sem novas movimentações no período. A última atualização (prorrogação do prazo de contribuições até 28/09/2026) foi publicada em 29/07/2026, fora da janela semanal.",
     },
   ],
 };

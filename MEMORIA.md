@@ -86,10 +86,29 @@
     * **Energia**: *Orçamento da CDE 2026 atinge R$ 52,7 bilhões: Pressão dos subsídios de GD e amortização via Uso do Bem Público* (Estudo, ANEEL/CCEE).
     * **Águas/Saneamento**: *Norma de Referência ANA nº 13/2025: Padronização da estrutura tarifária e diretrizes da Tarifa Social no Saneamento* (Nota Técnica, ANA).
     * **Tarifas Públicas**: *TUSD e TUST no ICMS: A modulação de efeitos do Tema 986 pelo STJ e a afetação do Tema 1429* (Jurisprudência Comentada, STJ/STF).
-  * **Radar Regulatório Atualizado (`content/radar.ts`)**:
-    * Novos monitoramentos de atos da ANEEL, ANA e STJ.
-    * Inclusão de avaliações metodológicas de núcleo para os setores de Energia e Saneamento Básico.
   * **Validação Completa**:
     * Atualização da suíte de testes `lib/publicacoes.test.ts` e `lib/radar.test.ts` (43 testes 100% aprovados).
     * Compilação estática do Next.js bem-sucedida (16 rotas geradas).
+
+### [17/08/2026] — Atualização do Radar Regulatório Semanal (Ciclo 10 a 17/08/2026)
+* **Demanda**: Incorporação do relatório semanal de atos e notícias regulatórias publicados entre 10 e 17 de agosto de 2026, com avaliação metodológica de leads frente aos observatórios do IDATE.
+* **Solução Implementada**:
+  * **Atualização do Radar Regulatório (`content/radar.ts`)**:
+    * Período vigente configurado para `10 a 17/08/2026`.
+    * Cadastro de 4 atos regulatórios reais:
+      1. *ANEEL*: Homologação de repasse preliminar de R$ 5,48 bi de UBP para redução tarifária no Norte e Nordeste (CDE).
+      2. *ANEEL*: Alteração de cronograma para reajuste e revisão tarifária da CEA Equatorial (Amapá).
+      3. *ANM*: Distribuição de mais de R$ 504 milhões em CFEM com início da operação da plataforma PGRM.
+      4. *ANM*: Abertura de Consulta Pública para revisão de dosimetria de infrações e cálculo de multas na mineração (10/08 a 24/09/2026).
+    * **Triagem Metodológica de Núcleo**: Classificação rigorosa dos itens como *leads de monitoramento em observação ativa*, destacando que nenhum item atende isoladamente aos 3 critérios simultâneos para abertura de núcleo nesta janela.
+    * **Transparência Institucional**: Registro formal de itens descartados por conexão fraca (Enel SP na ANEEL) e de fontes sem ocorrências na janela de 7 dias (DOU, ANA, Sandbox Mineral ANM).
+  * **Aprimoramentos de UI/UX (`components/sections/radar-regulatorio.tsx` e `components/sections/acervo-destaque.tsx`)**:
+    * Adição do id de âncora `id="radar"` para navegação direta.
+    * Componente auxiliar `BadgeCriterio` com suporte a estados `atendido`, `em_maturacao` e `insuficiente` com ícones semânticos.
+    * Atualização dos textos de destaque e rotas na página inicial.
+  * **Estabilidade & Testes (`lib/radar.test.ts` e `vitest.config.ts`)**:
+    * Configuração de `pool: "threads"` no Vitest para execução ultra-rápida e resiliente em Windows.
+    * Suíte de testes atualizada e validada com 41 testes (100% de aprovação).
+    * Build estático de produção do Next.js gerado com sucesso (16 rotas SSG/Static).
+
 

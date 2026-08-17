@@ -63,8 +63,8 @@ export function AcervoDestaque() {
 
                   <p className="mt-4 text-sm leading-relaxed text-fumaca">
                     {RADAR_ATUAL.itens.length} atos oficiais catalogados no ciclo
-                    atual, abrangendo deliberações da ANM sobre segurança de barragens
-                    e notificações fiscais de CFEM.
+                    atual, abrangendo repasses da CDE e tarifas pela ANEEL,
+                    distribuição de CFEM via PGRM e consulta pública da ANM.
                   </p>
 
                   <ul className="mt-6 space-y-3">
@@ -84,7 +84,7 @@ export function AcervoDestaque() {
 
                 <div className="mt-8 pt-4 border-t border-fio/60">
                   <Link
-                    href="/observatorios/recursos-minerais#radar"
+                    href="/observatorios/energia#radar"
                     className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-cobalto-claro hover:text-osso transition-colors"
                   >
                     Ver análise do radar completo

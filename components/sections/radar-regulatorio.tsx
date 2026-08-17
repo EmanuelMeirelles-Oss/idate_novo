@@ -4,6 +4,7 @@ import {
   RADAR_ATUAL,
   obterItensRadar,
   obterAnaliseRadar,
+  type StatusCriterio,
 } from "@/content/radar";
 import type { IdObservatorio } from "@/content/observatorios";
 import {
@@ -15,7 +16,33 @@ import {
   Scales,
   Buildings,
   CurrencyCircleDollar,
+  XCircle,
 } from "@phosphor-icons/react/dist/ssr";
+
+function BadgeCriterio({ status }: { status: StatusCriterio }) {
+  if (status === "atendido") {
+    return (
+      <span className="inline-flex items-center gap-1 rounded bg-emerald-500/20 px-2 py-0.5 font-mono text-[0.625rem] font-semibold uppercase text-emerald-300">
+        <CheckCircle size={11} weight="bold" />
+        Atendido
+      </span>
+    );
+  }
+  if (status === "em_maturacao") {
+    return (
+      <span className="inline-flex items-center gap-1 rounded bg-amber-500/20 px-2 py-0.5 font-mono text-[0.625rem] font-semibold uppercase text-amber-300">
+        <Clock size={11} weight="bold" />
+        Em maturação
+      </span>
+    );
+  }
+  return (
+    <span className="inline-flex items-center gap-1 rounded bg-rose-500/20 px-2 py-0.5 font-mono text-[0.625rem] font-semibold uppercase text-rose-300">
+      <XCircle size={11} weight="bold" />
+      Insuficiente
+    </span>
+  );
+}
 
 export function RadarRegulatorio({
   slugObservatorio,
@@ -29,7 +56,10 @@ export function RadarRegulatorio({
   const possuiItens = itens.length > 0;
 
   return (
-    <section className="border-b border-fio py-20 md:py-28 bg-noite/40 relative overflow-hidden">
+    <section
+      id="radar"
+      className="border-b border-fio py-20 md:py-28 bg-noite/40 relative overflow-hidden"
+    >
       {/* Luz ambiente sutil decorativa */}
       <div
         aria-hidden="true"
@@ -184,9 +214,7 @@ export function RadarRegulatorio({
                         <span className="text-xs font-bold text-osso">
                           1. {analise.criterios.recorrencia.titulo}
                         </span>
-                        <span className="rounded bg-amber-500/20 px-2 py-0.5 font-mono text-[0.625rem] font-semibold uppercase text-amber-300">
-                          Em maturação
-                        </span>
+                        <BadgeCriterio status={analise.criterios.recorrencia.status} />
                       </div>
                       <p className="mt-2.5 text-xs leading-relaxed text-fumaca">
                         {analise.criterios.recorrencia.detalhe}
@@ -199,10 +227,7 @@ export function RadarRegulatorio({
                         <span className="text-xs font-bold text-osso">
                           2. {analise.criterios.relevanciaColetiva.titulo}
                         </span>
-                        <span className="inline-flex items-center gap-1 rounded bg-emerald-500/20 px-2 py-0.5 font-mono text-[0.625rem] font-semibold uppercase text-emerald-300">
-                          <CheckCircle size={11} weight="bold" />
-                          Atendido
-                        </span>
+                        <BadgeCriterio status={analise.criterios.relevanciaColetiva.status} />
                       </div>
                       <p className="mt-2.5 text-xs leading-relaxed text-fumaca">
                         {analise.criterios.relevanciaColetiva.detalhe}
@@ -215,10 +240,7 @@ export function RadarRegulatorio({
                         <span className="text-xs font-bold text-osso">
                           3. {analise.criterios.viabilidadeApuracao.titulo}
                         </span>
-                        <span className="inline-flex items-center gap-1 rounded bg-emerald-500/20 px-2 py-0.5 font-mono text-[0.625rem] font-semibold uppercase text-emerald-300">
-                          <CheckCircle size={11} weight="bold" />
-                          Atendido
-                        </span>
+                        <BadgeCriterio status={analise.criterios.viabilidadeApuracao.status} />
                       </div>
                       <p className="mt-2.5 text-xs leading-relaxed text-fumaca">
                         {analise.criterios.viabilidadeApuracao.detalhe}
