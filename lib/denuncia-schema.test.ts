@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
 import { denunciaSchema } from "./denuncia-schema";
+
 
 const BASE = {
   anonimo: false,

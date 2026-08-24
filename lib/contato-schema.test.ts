@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
 import { contatoSchema } from "./contato-schema";
+
 
 const valido = {
   nome: "Maria Andrade",

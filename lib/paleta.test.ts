@@ -1,6 +1,6 @@
-import { describe, it, expect } from "vitest";
 import { contrastRatio } from "./contraste";
 import { PALETA } from "./paleta";
+
 
 describe("paleta — conformidade WCAG AA", () => {
   it("osso sobre noite atinge AAA para corpo de texto", () => {

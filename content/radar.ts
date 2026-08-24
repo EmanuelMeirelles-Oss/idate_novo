@@ -67,6 +67,201 @@ export interface CicloRadar {
 
 export const HISTORICO_RADAR: readonly CicloRadar[] = [
   {
+    id: "ciclo-2026-08-17-2026-08-24",
+    periodo: {
+      inicio: "2026-08-17",
+      fim: "2026-08-24",
+      rotulo: "17 a 24/08/2026",
+    },
+    fontesVigiadas: ["DOU", "ANM", "ANEEL", "ANA"],
+    itens: [
+      {
+        id: "anm-arr-cfem-municipios-afetados",
+        titulo:
+          "ANM conclui Avaliação de Resultado Regulatório da CFEM e projeta sistema dinâmico para repasses a municípios afetados",
+        fonte: "ANM (Notícias Oficiais)",
+        orgao: "ANM",
+        publicadoEm: "2026-08-19",
+        url: "https://www.gov.br/anm/pt-br/assuntos/noticias/avaliacao-de-regras-da-cfem-e-concluida-e-projeta-sistema-dinamico-para-repasses-a-municipios-afetados",
+        resumo:
+          "A Avaliação de Resultado Regulatório (ARR) da Resolução ANM nº 143/2023 apontou a necessidade de aperfeiçoar os critérios de distribuição dos 15% da CFEM destinados a municípios afetados (não apenas produtores) pela atividade mineral, visando um modelo dinâmico.",
+        observatorio: "recursos-minerais",
+        perguntaVinculada:
+          "Como se distribui a compensação financeira pela exploração mineral entre os entes federativos?",
+        empresasCitadas: ["Municípios Afetados pela Mineração", "ANM"],
+      },
+      {
+        id: "anm-sumula-prazos-recursos-municipios-afetados",
+        titulo:
+          "ANM aprova súmula definindo inadmissibilidade de recursos fora do prazo contra lista anual de municípios afetados",
+        fonte: "ANM (88ª Reunião Ordinária Pública)",
+        orgao: "ANM",
+        publicadoEm: "2026-08-19",
+        url: "https://www.gov.br/anm/pt-br/assuntos/noticias/recursos-contra-lista-de-municipios-afetados-por-mineracao-deverao-observar-prazos",
+        resumo:
+          "Na 88ª Reunião Ordinária Pública, a Diretoria Colegiada da ANM aprovou súmula que torna inadmissíveis recursos administrativos fora do prazo contra a lista anual de municípios afetados por infraestrutura ou transporte mineral, que fundamenta o rateio da CFEM.",
+        observatorio: "recursos-minerais",
+        perguntaVinculada:
+          "Como se distribui a compensação financeira pela exploração mineral entre os entes federativos?",
+        empresasCitadas: ["Municípios Afetados", "Diretoria Colegiada da ANM"],
+      },
+      {
+        id: "ana-outorga-hidreletricas-reversiveis-ciclo-fechado",
+        titulo:
+          "ANA simplifica exigência de outorga de recursos hídricos para hidrelétricas reversíveis de ciclo fechado",
+        fonte: "Cenário Energia (Manifestação da ANA à ANEEL)",
+        orgao: "ANA",
+        publicadoEm: "2026-08-19",
+        url: "https://cenarioenergia.com.br/2026/08/19/ana-simplifica-outorga-para-hidreletricas-reversiveis-de-ciclo-fechado/",
+        resumo:
+          "A ANA restringiu a exigência de outorga de recursos hídricos para UHRs de ciclo fechado ao enchimento inicial dos reservatórios e à recomposição de perdas operacionais — dispensando análise contínua de trechos de vazão reduzida e abrindo a possibilidade de a ANEEL pedir outorga preventiva em nome próprio.",
+        observatorio: "aguas",
+        perguntaVinculada:
+          "Como os instrumentos de outorga e cobrança pelo uso da água afetam grandes empreendimentos?",
+        empresasCitadas: ["ANA", "ANEEL", "Empreendimentos de UHR"],
+      },
+      {
+        id: "aneel-revisao-tarifaria-celesc-sc",
+        titulo:
+          "ANEEL aprova revisão tarifária periódica da Celesc-DIS com efeito médio de 10,82% em Santa Catarina",
+        fonte: "ANEEL (Resolução Homologatória nº 3.602/2026)",
+        orgao: "ANEEL",
+        publicadoEm: "2026-08-21",
+        url: "https://www.gov.br/aneel/pt-br",
+        resumo:
+          "Revisão tarifária periódica da Celesc-DIS com efeito médio de 10,82% sobre cerca de 3,6 milhões de unidades consumidoras em SC, sendo 9,26% em baixa tensão (residencial B1 em 9,29%) e 14,16% para grandes consumidores industriais e comerciais em alta tensão por alocação de custos de capacidade.",
+        observatorio: "energia",
+        perguntaVinculada:
+          "Que efeitos as revisões tarifárias periódicas produzem sobre consumidores industriais e rurais?",
+        empresasCitadas: ["Celesc Distribuição S.A.", "Consumidores Industriais e Comerciais de SC"],
+        valorEnvolvido: "Reajuste médio +10,82% (Alta Tensão +14,16%)",
+      },
+    ],
+    analises: [
+      {
+        observatorio: "recursos-minerais",
+        tema: "Revisão dos Critérios e Prazos Recursais da CFEM para Municípios Afetados (ARR e Súmula ANM)",
+        status: "em_observacao",
+        statusRotulo: "Lead de Monitoramento — Triagem Aberta",
+        resumo:
+          "A conclusão da ARR da Resolução ANM nº 143/2023 projetando modelo dinâmico de repasse da CFEM aos municípios afetados, combinada com a súmula fixando preclusão temporal de recursos na 88ª Reunião Colegiada, foram catalogadas como leads de forte sinergia com a agenda do observatório.",
+        criterios: {
+          recorrencia: {
+            status: "em_maturacao",
+            titulo: "Recorrência documentada",
+            detalhe:
+              "Dois atos normativos convergentes aprovados na mesma reunião colegiada. A eventual constituição de núcleo autônomo aguardará a publicação da minuta regulatória subsequente da ARR ou o surgimento de disputas interfederativas registradas pelo instituto.",
+          },
+          relevanciaColetiva: {
+            status: "atendido",
+            titulo: "Relevância coletiva",
+            detalhe:
+              "Os critérios definem o rateio de 15% da arrecadação global da CFEM entre centenas de municípios cortados por ferroductos, rodovias de escoamento e estruturas de apoio minerário.",
+          },
+          viabilidadeApuracao: {
+            status: "atendido",
+            titulo: "Viabilidade de apuração",
+            detalhe:
+              "Documentação pública acessível nas atas da 88ª Reunião Ordinária da ANM e nos autos do processo da ARR nº 143/2023.",
+          },
+        },
+        parecerTecnico:
+          "Lead mantido em observação ativa no Observatório de Recursos Minerais. Recomenda-se acompanhar o desdobramento da minuta regulatória decorrente da ARR.",
+      },
+      {
+        observatorio: "aguas",
+        tema: "Simplificação do Regime de Outorga Hídrica para Hidrelétricas Reversíveis (ANA/ANEEL)",
+        status: "em_observacao",
+        statusRotulo: "Lead de Monitoramento — Triagem Aberta",
+        resumo:
+          "A limitação da exigência de outorga para UHRs de ciclo fechado ao volume de enchimento inicial e reposição de perdas alivia exigências operacionais e altera a sistemática de outorga preventiva em leilões de reserva.",
+        criterios: {
+          recorrencia: {
+            status: "em_maturacao",
+            titulo: "Recorrência documentada",
+            detalhe:
+              "Manifestação da ANA em resposta a consulta da ANEEL. A consolidação dependerá da posterior edição de norma conjunta ou resolução normativa abrangendo a outorga no SIN.",
+          },
+          relevanciaColetiva: {
+            status: "atendido",
+            titulo: "Relevância coletiva",
+            detalhe:
+              "Afeta diretamente o modelo de negócios e o aproveitamento de recursos hídricos para armazenamento de energia de grande porte no país.",
+          },
+          viabilidadeApuracao: {
+            status: "atendido",
+            titulo: "Viabilidade de apuração",
+            detalhe:
+              "Manifestação formal da agência e normativos de outorga de recursos hídricos disponíveis nos portais da ANA e ANEEL.",
+          },
+        },
+        parecerTecnico:
+          "Item catalogado como lead de monitoramento no Observatório Nacional das Águas.",
+      },
+      {
+        observatorio: "energia",
+        tema: "Revisão Tarifária Periódica Celesc-DIS e Alocação de Custos de Capacidade (ANEEL)",
+        status: "em_observacao",
+        statusRotulo: "Lead de Monitoramento — Triagem Aberta",
+        resumo:
+          "A Resolução Homologatória nº 3.602/2026 fixou reajuste médio de 10,82% para a Celesc-DIS, destacando-se a elevação de 14,16% na Alta Tensão devido à alocação de custos de capacidade e demanda.",
+        criterios: {
+          recorrencia: {
+            status: "em_maturacao",
+            titulo: "Recorrência documentada",
+            detalhe:
+              "Processo tarifário periódico ordinário de calendário regulatório. Comparações contínuas dependem do fechamento do ciclo de revisões de 2026 de outras distribuidoras do Sul/Sudeste.",
+          },
+          relevanciaColetiva: {
+            status: "atendido",
+            titulo: "Relevância coletiva",
+            detalhe:
+              "Impacto financeiro direto sobre 3,6 milhões de consumidores e sobre os custos de competitividade do parque industrial catarinense.",
+          },
+          viabilidadeApuracao: {
+            status: "atendido",
+            titulo: "Viabilidade de apuração",
+            detalhe:
+              "Dados abertos na Resolução Homologatória nº 3.602/2026 e nas planilhas de cálculo do processo tarifário na ANEEL.",
+          },
+        },
+        parecerTecnico:
+          "Item catalogado como lead no Observatório Nacional da Energia e no Observatório de Tarifas Públicas.",
+      },
+    ],
+    itensDescartados: [
+      {
+        titulo: "Decretos nº 13.096/2026 e nº 13.097/2026 (Hidrogênio Sustentável e Mercado Livre)",
+        fonte: "DOU",
+        orgao: "DOU",
+        publicadoEm: "2026-08-12",
+        motivoDescarte: "Publicados em 12-13/08/2026, fora da janela semanal vigiada (17 a 24/08/2026).",
+      },
+      {
+        titulo: "Consulta Pública ANM nº 01/2026 (Infrações e Multas na Mineração)",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-08-10",
+        motivoDescarte: "Abertura em 10/08/2026, fora da janela semanal de 17 a 24/08/2026.",
+      },
+      {
+        titulo: "Prorrogação da Tomada de Subsídios nº 04/2026 (Sandbox Regulatório Mineral)",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-07-29",
+        motivoDescarte: "Sem movimentações novas publicadas no Diário Oficial ou portal na janela de 17 a 24/08/2026 (contribuições abertas até 28/09/2026).",
+      },
+    ],
+    fontesSemOcorrencias: [
+      {
+        orgao: "DOU (Diário Oficial da União)",
+        url: "https://in.gov.br",
+        observacao:
+          "Sem portarias ou decretos autônomos inéditos de impacto difuso publicados entre 17 e 24/08/2026 além dos atos homologatórios já mapeados pelas agências reguladoras específicas.",
+      },
+    ],
+  },
+  {
     id: "ciclo-2026-08-10-2026-08-17",
     periodo: {
       inicio: "2026-08-10",

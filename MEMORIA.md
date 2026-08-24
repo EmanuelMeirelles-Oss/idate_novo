@@ -122,4 +122,21 @@
     * Suíte de testes atualizada (`lib/radar.test.ts`) com 42 testes 100% aprovados.
     * Compilação de produção Next.js estática e dinâmica bem-sucedida (18 rotas geradas).
 
+### [24/08/2026] — Atualização do Radar Regulatório Semanal (Ciclo 17 a 24/08/2026)
+* **Demanda**: Incorporação do relatório semanal de atos normativos e decisões regulatórias publicados entre 17 e 24 de agosto de 2026.
+* **Solução Implementada**:
+  * **Atualização do Radar Regulatório (`content/radar.ts`)**:
+    * Período ativo configurado para `17 a 24/08/2026`.
+    * Cadastro de 4 atos normativos reais:
+      1. *ANM*: Conclusão da ARR da Resolução ANM nº 143/2023 projetando sistema dinâmico para os 15% da CFEM em municípios afetados (19/08/2026).
+      2. *ANM*: Súmula aprovada na 88ª Reunião Ordinária definindo inadmissibilidade de recursos fora do prazo contra lista anual de municípios afetados pela mineração (19/08/2026).
+      3. *ANA*: Simplificação de exigência de outorga hídrica para hidrelétricas reversíveis (UHRs) de ciclo fechado restrita ao enchimento inicial e reposição de perdas operacionais (19/08/2026).
+      4. *ANEEL*: Resolução Homologatória nº 3.602/2026 com revisão tarifária da Celesc-DIS (efeito médio +10,82%, sendo +14,16% para Alta Tensão em SC) (21/08/2026).
+    * **Triagem Metodológica de Núcleo**:
+      * *Recursos Minerais*: Abertura de lead em observação ativa reunindo a ARR da CFEM e a Súmula de prazos recursais da ANM.
+      * *Águas*: Lead em observação sobre a nova regra de outorga de UHRs da ANA.
+      * *Energia & Tarifas*: Lead em observação cobrindo a revisão da Celesc-DIS em SC.
+    * **Transparência Institucional**: Mapeamento de itens descartados por extrapolarem a janela semanal (Decretos nº 13.096/2026 e nº 13.097/2026; CP ANM nº 01/2026; Tomada de Subsídios ANM nº 04/2026) e registro de vigia no DOU.
+
+
 
