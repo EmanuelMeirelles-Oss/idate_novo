@@ -138,5 +138,18 @@
       * *Energia & Tarifas*: Lead em observação cobrindo a revisão da Celesc-DIS em SC.
     * **Transparência Institucional**: Mapeamento de itens descartados por extrapolarem a janela semanal (Decretos nº 13.096/2026 e nº 13.097/2026; CP ANM nº 01/2026; Tomada de Subsídios ANM nº 04/2026) e registro de vigia no DOU.
 
-
-
+### [31/08/2026] — Atualização do Radar Regulatório Semanal (Ciclo 24 a 31/08/2026)
+* **Demanda**: Incorporação do relatório semanal de atos normativos e decisões regulatórias publicados entre 24 e 31 de agosto de 2026 (DOU, ANEEL, ANA e ANM).
+* **Solução Implementada**:
+  * **Atualização do Radar Regulatório (`content/radar.ts`)**:
+    * Período ativo configurado para `24 a 31/08/2026` (`ciclo-2026-08-24-2026-08-31`).
+    * Cadastro de 2 atos normativos relevantes:
+      1. *DOU / MME*: Portarias MME nº 929, 930 e 931/2026 — 3 consultas públicas sobre comercialização, PLD, TFSEE de comercializadoras (0,40%) e ERCAP, alterando regras de migração para cargas ≥ 2,3 kV e liquidação semanal no MCP a partir de 2029.
+      2. *ANEEL*: Reajuste Tarifário Anual da Equatorial Maranhão com troca de indexador da Parcela B do IGP-M para IPCA e antecipação de UBP (Lei nº 15.235/2025) por modicidade tarifária.
+    * **Triagem Metodológica de Núcleo**:
+      * *Energia / Tarifas Públicas*: Identificação do uso de UBP como instrumento de modicidade tarifária pela 2ª semana consecutiva (Lei nº 15.235/2025) — lead mantido em observação ativa (critério de recorrência em maturação).
+      * *Mercado Livre de Energia*: Lead de monitoramento sobre a revisão estrutural das regras de comercialização e encargos (Portarias MME 929/930/931).
+    * **Transparência Institucional**: Mapeamento de 5 itens descartados (Resolução ANA nº 301/2026, CP ANA nº 04/2026, Exposibram 2026 na ANM, Sandbox Mineral e Resoluções ANM prévias) e 3 registros de fontes sem ocorrências na janela.
+  * **Validação Completa**:
+    * Atualização da suíte de testes (`lib/radar.test.ts`).
+    * Execução do build estático e testes automatizados.

@@ -67,6 +67,176 @@ export interface CicloRadar {
 
 export const HISTORICO_RADAR: readonly CicloRadar[] = [
   {
+    id: "ciclo-2026-08-24-2026-08-31",
+    periodo: {
+      inicio: "2026-08-24",
+      fim: "2026-08-31",
+      rotulo: "24 a 31/08/2026",
+    },
+    fontesVigiadas: ["DOU", "ANM", "ANEEL", "ANA"],
+    itens: [
+      {
+        id: "mme-portarias-929-930-931-consultas-publicas",
+        titulo:
+          "Portarias MME nº 929, 930 e 931, de 20/08/2026 — três consultas públicas sobre comercialização, PLD, TFSEE de comercializadoras e reserva de capacidade",
+        fonte: "DOU, publicadas em 24/08/2026 (Ministério de Minas e Energia)",
+        orgao: "DOU",
+        publicadoEm: "2026-08-24",
+        url: "https://www.gov.br/mme/pt-br/assuntos/noticias/mme-abre-consulta-sobre-regras-de-comercializacao-armazenamento-e-mercado-livre-de-energia",
+        resumo:
+          "A Portaria nº 930 propõe revisão dos Decretos nº 5.163/2004 e nº 2.655/1998 (com ajustes no nº 5.177/2004) para adequá-los à Lei nº 15.269/2025, incluindo flexibilização de cobertura contratual de 100% da carga, novas definições de agente (varejista, armazenador e Supridor de Última Instância), regras de migração e liquidação semanal do MCP a partir de janeiro de 2029. A Portaria nº 929 regulamenta a TFSEE sobre comercializadoras (alíquota de 0,40% fixada pela Lei nº 15.269/2025), e a Portaria nº 931 trata do rateio do ERCAP e da apuração do Encargo de Energia de Reserva.",
+        observatorio: "mercado-livre-energia",
+        perguntaVinculada:
+          "Como as regras de migração afetam consumidores de médio porte?",
+        empresasCitadas: [
+          "Ministério de Minas e Energia",
+          "Comercializadoras de Energia",
+          "CCEE",
+          "ANEEL",
+        ],
+      },
+      {
+        id: "aneel-reajuste-tarifario-equatorial-maranhao",
+        titulo:
+          "ANEEL aprova Reajuste Tarifário Anual da Equatorial Maranhão com troca de indexador para IPCA e aporte de UBP",
+        fonte: "ANEEL (17ª Reunião Pública Ordinária da Diretoria de 2026)",
+        orgao: "ANEEL",
+        publicadoEm: "2026-08-24",
+        url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/aneel-aprova-reajuste-tarifario-anual-da-equatorial-maranhao",
+        resumo:
+          "Reajuste tarifário anual da Equatorial Maranhão aprovado em 24/08/2026 (tarifas vigentes a partir de 28/08/2026) com efeito médio de 5,76% (residenciais B1 5,20%; baixa tensão média 5,25%; alta tensão média 8,68%). O processo marca a alteração do índice da Parcela B do IGP-M para o IPCA (ponderado) após renovação contratual e a antecipação de recursos da repactuação de cotas de Uso de Bem Público (UBP), na forma da Lei nº 15.235/2025, por modicidade tarifária.",
+        observatorio: "tarifas-publicas",
+        perguntaVinculada:
+          "Que componentes integram a tarifa e quais deles são efetivamente discriminados ao usuário?",
+        empresasCitadas: ["Equatorial Maranhão", "ANEEL"],
+        valorEnvolvido: "Efeito médio +5,76% (Alta Tensão +8,68%)",
+      },
+    ],
+    analises: [
+      {
+        observatorio: "energia",
+        tema: "UBP como Instrumento de Modicidade Tarifária (Lei nº 15.235/2025)",
+        status: "em_observacao",
+        statusRotulo: "Lead de Monitoramento — Triagem Aberta",
+        resumo:
+          "Segunda ocorrência consecutiva do mecanismo de antecipação de recursos da repactuação de cotas de Uso de Bem Público (UBP) sob a Lei nº 15.235/2025 para modicidade tarifária (homologação prévia de R$ 5,48 bi no Norte/Nordeste e agora no RTA da Equatorial Maranhão). Padrão regulatório em maturação.",
+        criterios: {
+          recorrencia: {
+            status: "em_maturacao",
+            titulo: "Recorrência documentada",
+            detalhe:
+              "Segunda ocorrência em duas semanas consecutivas sob a mesma fundamentação legal (Lei nº 15.235/2025). Duas ocorrências sinalizam padrão em formação, mantendo o critério em maturação antes de eventual constituição de núcleo autônomo.",
+          },
+          relevanciaColetiva: {
+            status: "atendido",
+            titulo: "Relevância coletiva",
+            detalhe:
+              "O mecanismo atenua tarifas para conjuntos indeterminados de consumidores em áreas de concessão inteiras (cerca de 2,88 milhões de unidades consumidoras no Maranhão).",
+          },
+          viabilidadeApuracao: {
+            status: "atendido",
+            titulo: "Viabilidade de apuração",
+            detalhe:
+              "Base normativa expressa na Lei nº 15.235/2025, resoluções homologatórias e notas técnicas da ANEEL totalmente rastreáveis.",
+          },
+        },
+        parecerTecnico:
+          "Lead mantido em observação ativa nos Observatórios de Energia e Tarifas Públicas. O acompanhamento vigiará a reaparição do mecanismo de UBP em novos processos tarifários de distribuidoras.",
+      },
+      {
+        observatorio: "mercado-livre-energia",
+        tema: "Revisão Ampla das Regras do Mercado Livre, PLD, TFSEE e ERCAP (Portarias MME nº 929, 930 e 931/2026)",
+        status: "em_observacao",
+        statusRotulo: "Lead de Monitoramento — Triagem Aberta",
+        resumo:
+          "Consultas públicas abertas pelo MME propondo a revisão dos Decretos nº 5.163/2004 e nº 2.655/1998 para adequação à Lei nº 15.269/2025, alterando regras de migração em tensão ≥ 2,3 kV, antecedência de 180 dias, alíquota da TFSEE sobre comercializadoras (0,40%) e rateio do ERCAP.",
+        criterios: {
+          recorrencia: {
+            status: "em_maturacao",
+            titulo: "Recorrência documentada",
+            detalhe:
+              "Três portarias normativas simultâneas abrindo prazo de 45 dias de contribuições (até 08/10/2026). Acompanhamento do desdobramento regulatório e da minuta final pós-consulta pública.",
+          },
+          relevanciaColetiva: {
+            status: "atendido",
+            titulo: "Relevância coletiva",
+            detalhe:
+              "Redefine agentes, encargos (TFSEE e ERCAP), regras de migração para consumidores de médio porte e liquidação semanal no MCP a partir de 2029.",
+          },
+          viabilidadeApuracao: {
+            status: "atendido",
+            titulo: "Viabilidade de apuração",
+            detalhe:
+              "Minutas publicadas no DOU e Notas Técnicas nº 14/2026/SE, 15/2026/SE e 27/2026/SAER/SE disponíveis no portal de consultas públicas do MME.",
+          },
+        },
+        parecerTecnico:
+          "Item catalogado como lead de monitoramento prioritário no Observatório do Mercado Livre de Energia e no Observatório de Grandes Consumidores Industriais. Apuração acompanhará o ciclo de contribuições até 08/10/2026.",
+      },
+    ],
+    itensDescartados: [
+      {
+        titulo: "Resolução Regulatória ANA nº 301/2026 (Exigência da NR nº 8/2024)",
+        fonte: "ANA",
+        orgao: "ANA",
+        publicadoEm: "2026-08-14",
+        motivoDescarte:
+          "Publicada em 14/08/2026 (DOU nº 154 de 17/08/2026), fora da janela semanal vigiada (24 a 31/08/2026).",
+      },
+      {
+        titulo: "Consulta Pública ANA nº 04/2026 (Agenda Regulatória 2027-2028)",
+        fonte: "ANA",
+        orgao: "ANA",
+        publicadoEm: "2026-08-03",
+        motivoDescarte:
+          "Lançada em 03/08/2026, fora da janela semanal de 24 a 31/08/2026 (contribuições abertas até 17/09/2026).",
+      },
+      {
+        titulo: "Notícias Institucionais ANM da Exposibram 2026",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-08-25",
+        motivoDescarte:
+          "Cobertura institucional (cadeia do ouro, rastreabilidade e acervo histórico), sem conteúdo ou inovação normativa.",
+      },
+      {
+        titulo: "Tomada de Subsídios ANM nº 04/2026 (Sandbox Regulatório Mineral)",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-07-29",
+        motivoDescarte:
+          "Sem movimentação na janela de 24 a 31/08/2026 (última atualização em 29/07/2026 com prazo prorrogado até 28/09/2026).",
+      },
+      {
+        titulo: "Resoluções ANM nº 244, 245 e 246/2026 e Aviso de Consulta Pública nº 1/2026",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-07-31",
+        motivoDescarte:
+          "Publicados entre 31/07 e 07/08/2026, fora da janela semanal vigiada.",
+      },
+    ],
+    fontesSemOcorrencias: [
+      {
+        orgao: "ANA (Agência Nacional de Águas e Saneamento Básico)",
+        url: "https://www.gov.br/ana/pt-br/legislacao/resolucoes/resolucoes-regulatorias",
+        observacao:
+          "Nenhum ato normativo inédito publicado entre 24 e 31/08/2026. A Resolução nº 301/2026 e a Consulta Pública nº 04/2026 foram editadas antes da janela.",
+      },
+      {
+        orgao: "ANM (Agência Nacional de Mineração)",
+        url: "https://www.gov.br/anm",
+        observacao:
+          "Nenhum ato normativo publicado na janela. As matérias de 25 a 28/08 restringiram-se à cobertura institucional da Exposibram 2026.",
+      },
+      {
+        orgao: "Eixo Terra / Regularização Fundiária",
+        observacao:
+          "Nenhum ato normativo ou relevante localizado no período vigiado.",
+      },
+    ],
+  },
+  {
     id: "ciclo-2026-08-17-2026-08-24",
     periodo: {
       inicio: "2026-08-17",
