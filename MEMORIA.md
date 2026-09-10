@@ -153,3 +153,30 @@
   * **Validação Completa**:
     * Atualização da suíte de testes (`lib/radar.test.ts`).
     * Execução do build estático e testes automatizados.
+
+### [08/09/2026] — Atualização do Radar Regulatório Semanal (Ciclo 01 a 08/09/2026)
+* **Demanda**: Incorporação do relatório semanal de atos normativos e decisões regulatórias publicados entre 1 e 8 de setembro de 2026 (ANA, ANEEL, ANM e DOU).
+* **Solução Implementada**:
+  * **Atualização do Radar Regulatório (`content/radar.ts`)**:
+    * Período ativo configurado para `01 a 08/09/2026` (`ciclo-2026-09-01-2026-09-08`).
+    * Cadastro de 10 atos regulatórios reais distribuídos nos observatórios:
+      1. *ANA*: NR nº 16/2026 (Resolução nº 302/2026) sobre contabilidade regulatória no saneamento básico (Águas).
+      2. *ANA*: Audiência Pública nº 03/2026 sobre norma de referência de revisão tarifária de água e esgoto (Águas).
+      3. *ANA*: Debate sobre Reforma Tributária no saneamento no 3º Encontro de ERIs (Tarifas Públicas).
+      4. *ANA*: Lista Positiva da Tarifa Social de Água e Esgoto referente a julho/2026 (Tarifas Públicas).
+      5. *ANEEL*: Redução média de 14,67% nas tarifas da Roraima Energia (Energia).
+      6. *ANEEL*: Consulta Pública sobre aprimoramento das Regras de Comercialização 2027 (Mercado Livre).
+      7. *ANEEL*: CP nº 031/2026 com proposta de indicador para prazos de execução de obras de distribuição (Energia).
+      8. *ANEEL*: Audiência Pública sobre os primeiros editais de leilões de baterias de grande porte no Brasil (Transição Energética).
+      9. *ANM*: Audiência Pública nº 02/2026 sobre gestão de segurança de pilhas de estéril e rejeito na mineração (Recursos Minerais).
+      10. *ANM*: Avanço do projeto de IA para controle de prazos na arrecadação e fiscalização da CFEM (Recursos Minerais).
+    * **Triagem Metodológica de Núcleo**:
+      * *Águas / Tarifas Públicas*: Identificação de alta densidade documental sobre o equilíbrio econômico-financeiro no saneamento (NR 16/2026, AP 03/2026, reforma tributária e Tarifa Social). Mantido em maturação sem constituição de núcleo imediato em razão do critério de recorrência independente.
+      * *Recursos Minerais*: Lead em observação cobrindo regulação de pilhas de rejeito (AP 02/2026) e automação da CFEM.
+      * *Energia / Mercado Livre / Transição Energética*: Lead em observação cobrindo revisão tarifária da Roraima Energia, indicadores de obras e leilão inédito de baterias.
+    * **Transparência Institucional**: Mapeamento de 8 itens descartados por fraca relação temática ou falta de inovação normativa e registro de observação sobre a busca direta no DOU (defeso eleitoral nas agências).
+  * **Validação & CI/CD**:
+    * Atualização da suíte de testes em `lib/radar.test.ts` (13 testes Vitest 100% aprovados).
+    * Compilação estática de produção do Next.js aprovada (`next build` gerando 19 rotas).
+    * Commit e push para a branch `main` no repositório GitHub para auto-deploy na Vercel.
+

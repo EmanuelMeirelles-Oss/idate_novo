@@ -67,6 +67,342 @@ export interface CicloRadar {
 
 export const HISTORICO_RADAR: readonly CicloRadar[] = [
   {
+    id: "ciclo-2026-09-01-2026-09-08",
+    periodo: {
+      inicio: "2026-09-01",
+      fim: "2026-09-08",
+      rotulo: "01 a 08/09/2026",
+    },
+    fontesVigiadas: ["DOU", "ANM", "ANEEL", "ANA"],
+    itens: [
+      {
+        id: "ana-norma-referencia-16-2026-contabilidade-regulatoria",
+        titulo:
+          "ANA publica Norma de Referência nº 16/2026, sobre contabilidade regulatória no saneamento básico",
+        fonte: "ANA — 31/08/2026 (Resolução ANA nº 302/2026, publicada no DOU)",
+        orgao: "ANA",
+        publicadoEm: "2026-08-31",
+        url: "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias-periodo-eleitoral-2026/ana-publica-norma-de-referencia-sobre-contabilidade-regulatoria-no-saneamento-basico",
+        resumo:
+          "Padroniza os procedimentos de contabilidade regulatória de prestadores de água e esgoto e fixa prazo de três anos (até 31/08/2029) para que as entidades reguladoras infranacionais incorporem as diretrizes aos seus atos normativos. Define a base contábil sobre a qual se calculam revisões tarifárias e indenizações de ativos ao fim da concessão.",
+        observatorio: "aguas",
+        perguntaVinculada:
+          "Como se estruturam as revisões tarifárias nos contratos de concessão de saneamento e a aplicação das Normas de Referência da ANA?",
+        empresasCitadas: [
+          "ANA",
+          "Entidades Reguladoras Infranacionais (ERIs)",
+          "Prestadores de Água e Esgoto",
+        ],
+      },
+      {
+        id: "ana-audiencia-publica-03-2026-revisao-tarifaria-agua-esgoto",
+        titulo:
+          "Audiência Pública nº 03/2026 sobre a norma de referência de revisão tarifária para água e esgoto",
+        fonte: "ANA — 02/09/2026 (Consulta Pública nº 03/2026 aberta até 17/09/2026)",
+        orgao: "ANA",
+        publicadoEm: "2026-09-02",
+        url: "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias-periodo-eleitoral-2026/audiencia-publica-sobre-revisao-tarifaria-para-servicos-de-agua-e-esgoto-recebe-inscricoes-para-apresentacoes-ate-9-de-setembro",
+        resumo:
+          "Norma de referência que regerá a revisão tarifária periódica, ordinária e extraordinária dos serviços de abastecimento de água e esgotamento sanitário. Em janela aberta de contribuições públicas até 17/09/2026.",
+        observatorio: "aguas",
+        perguntaVinculada:
+          "Como se estruturam as revisões tarifárias nos contratos de concessão de saneamento e a aplicação das Normas de Referência da ANA?",
+        empresasCitadas: [
+          "ANA",
+          "Entidades Reguladoras Infranacionais",
+          "Prestadores de Serviços de Saneamento",
+        ],
+      },
+      {
+        id: "ana-3-encontro-eris-reforma-tributaria-saneamento",
+        titulo:
+          "ANA encerra 3º Encontro Nacional das Entidades Reguladoras Infranacionais com debate sobre Reforma Tributária no saneamento",
+        fonte: "ANA — 04/09/2026",
+        orgao: "ANA",
+        publicadoEm: "2026-09-04",
+        url: "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias-periodo-eleitoral-2026/ana-encerra-3o-encontro-nacional-das-entidades-reguladoras-infranacionais-com-debate-sobre-reforma-tributaria-no-saneamento",
+        resumo:
+          "Debate sobre os efeitos da reforma tributária na tarifa de saneamento básico e o papel regulatório das ERIs. Lead de acompanhamento sobre a estrutura tarifária e tributária.",
+        observatorio: "tarifas-publicas",
+        perguntaVinculada:
+          "Como os tributos incidentes sobre serviços públicos delegados foram tratados pelos tribunais superiores (TUST/TUSD no ICMS)?",
+        empresasCitadas: ["ANA", "ERIs"],
+      },
+      {
+        id: "ana-lista-positiva-tarifa-social-agua-esgoto-julho",
+        titulo:
+          "ANA publica Lista Positiva da Tarifa Social de Água e Esgoto com dados de julho de 2026",
+        fonte: "ANA — 03/09/2026",
+        orgao: "ANA",
+        publicadoEm: "2026-09-03",
+        url: "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias-periodo-eleitoral-2026/lista-positiva-com-dados-de-julho-e-marcada-por-estabilidade-na-implementacao-da-tarifa-social-de-agua-e-esgoto",
+        resumo:
+          "Série mensal de dados públicos sobre a implementação da Tarifa Social de Água e Esgoto (1.920 municípios em julho, ante 1.917 em junho), acompanhando a aplicação do benefício.",
+        observatorio: "tarifas-publicas",
+        perguntaVinculada:
+          "Que componentes integram a tarifa e quais deles são efetivamente discriminados ao usuário?",
+        empresasCitadas: ["ANA", "Municípios Beneficiados"],
+      },
+      {
+        id: "aneel-reducao-tarifas-roraima-energia",
+        titulo:
+          "ANEEL aprova redução média de 14,67% nas tarifas da Roraima Energia",
+        fonte: "ANEEL — 02/09/2026",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-02",
+        url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/aneel-aprova-reducao-nas-tarifas-da-roraima-energia",
+        resumo:
+          "Revisão tarifária da Roraima Energia aprovada com redução média de 14,67% nas tarifas. Caso atípico de sistema isolado em integração ao SIN com efeito por classe de consumo.",
+        observatorio: "energia",
+        perguntaVinculada:
+          "Que efeitos as revisões tarifárias periódicas produzem sobre consumidores industriais e rurais?",
+        empresasCitadas: ["Roraima Energia", "ANEEL"],
+        valorEnvolvido: "Redução média -14,67%",
+      },
+      {
+        id: "aneel-cp-regras-comercializacao-2027",
+        titulo:
+          "ANEEL propõe aprimoramento das Regras de Comercialização 2027 em Consulta Pública",
+        fonte: "ANEEL — 01/09/2026 (contribuições de 03/09 a 02/10/2026)",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-01",
+        url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/consulta-publica-propoe-aprimoramento-das-regras-de-comercializacao-2027",
+        resumo:
+          "Proposta de aperfeiçoamento das Regras de Comercialização para 2027, base operacional do ambiente de contratação livre, redefinindo formação de preço e alocação de risco.",
+        observatorio: "mercado-livre-energia",
+        perguntaVinculada:
+          "Que assimetrias de informação persistem na formação de preço no ambiente de contratação livre?",
+        empresasCitadas: ["ANEEL", "CCEE", "Comercializadoras de Energia"],
+      },
+      {
+        id: "aneel-cp-031-2026-indicador-prazos-obras-distribuicao",
+        titulo:
+          "ANEEL propõe novo indicador para prazos de execução de obras de distribuição (CP nº 031/2026)",
+        fonte: "ANEEL — 01/09/2026 (contribuições de 03/09 a 19/10/2026)",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-01",
+        url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/aneel-propoe-novo-indicador-para-incentivar-o-cumprimento-dos-prazos-de-execucao-de-obras-relacionadas-ao-servico-de-distribuicao",
+        resumo:
+          "Consulta Pública nº 031/2026 com proposta de indicador de qualidade para incentivar o cumprimento dos prazos de obras de distribuição de energia, afetando penalidades e componentes tarifários.",
+        observatorio: "energia",
+        perguntaVinculada:
+          "Que efeitos as revisões tarifárias periódicas produzem sobre consumidores industriais e rurais?",
+        empresasCitadas: ["ANEEL", "Distribuidoras de Energia"],
+      },
+      {
+        id: "aneel-ap-editais-leiloes-baterias-grande-porte",
+        titulo:
+          "Audiência Pública debate editais dos primeiros leilões de baterias de grande porte no Brasil",
+        fonte: "ANEEL — 01/09/2026 (contribuições até 14/09/2026)",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-01",
+        url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/audiencia-publica-debate-editais-dos-primeiros-leiloes-de-baterias-de-grande-porte-no-brasil",
+        resumo:
+          "Primeiro desenho regulatório para leilão de armazenamento de energia em baterias de grande porte no Brasil, definindo regras de remuneração de capacidade e custeio.",
+        observatorio: "transicao-energetica",
+        perguntaVinculada:
+          "Como a regulação do mercado de carbono e novos vetores limpos impactam a competitividade industrial?",
+        empresasCitadas: ["ANEEL", "ONS", "Agentes do Setor Elétrico"],
+      },
+      {
+        id: "anm-ap-02-2026-seguranca-pilhas-mineracao",
+        titulo:
+          "ANM realiza Audiência Pública nº 02/2026 sobre gestão da segurança de pilhas de mineração",
+        fonte: "ANM — aviso em 31/08/2026 (sessão virtual em 11/09; contribuições até 14/10/2026)",
+        orgao: "ANM",
+        publicadoEm: "2026-08-31",
+        url: "https://www.gov.br/anm/pt-br/assuntos/noticias/gestao-da-seguranca-de-pilhas-de-mineracao-e-tema-de-audiencia-publica",
+        resumo:
+          "Minuta de resolução com Análise de Impacto Regulatório (AIR) sobre segurança de pilhas de estéril e rejeito na mineração, reforçando a fiscalização e a contenção de passivos socioambientais.",
+        observatorio: "recursos-minerais",
+        perguntaVinculada:
+          "Que obrigações de recuperação ambiental incidem sobre áreas lavradas e como são fiscalizadas?",
+        empresasCitadas: ["ANM", "Empresas Mineradoras"],
+      },
+      {
+        id: "anm-ia-controle-prazos-royalties-cfem",
+        titulo:
+          "ANM avança em projeto de IA para controle de prazos da arrecadação e fiscalização da CFEM",
+        fonte: "ANM — 02/09/2026",
+        orgao: "ANM",
+        publicadoEm: "2026-09-02",
+        url: "https://www.gov.br/anm/pt-br/assuntos/noticias/royalties-da-mineracao-projeto-de-ia-para-controle-de-prazos-avanca",
+        resumo:
+          "Desenvolvimento de ferramentas de IA para automação e controle de prazos na arrecadação e fiscalização da CFEM. Afeta a infraestrutura de dados sobre repasses a entes federativos.",
+        observatorio: "recursos-minerais",
+        perguntaVinculada:
+          "Como se distribui a compensação financeira pela exploração mineral entre os entes federativos?",
+        empresasCitadas: ["ANM"],
+      },
+    ],
+    analises: [
+      {
+        observatorio: "aguas",
+        tema: "Estrutura Econômico-Financeira das Tarifas de Saneamento (NR nº 16/2026 e CP/AP nº 03/2026 da ANA)",
+        status: "em_observacao",
+        statusRotulo: "Lead de Monitoramento — Triagem Aberta (Densidade Documental em Maturação)",
+        resumo:
+          "Os itens 1.1 a 1.4 formam um conjunto coerente sobre contabilidade regulatória (NR 16/2026), procedimentos de revisão tarifária (CP/AP 03/2026), reflexos da reforma tributária e dados da Tarifa Social. Alta densidade documental na semana.",
+        criterios: {
+          recorrencia: {
+            status: "em_maturacao",
+            titulo: "Recorrência documentada",
+            detalhe:
+              "Apesar da elevada densidade documental temática, o critério de recorrência exige a verificação do padrão em fontes ou comunicações independentes (ex.: denúncias ou ações infranacionais). Lead mantido em maturação sem constituição imediata de núcleo autônomo.",
+          },
+          relevanciaColetiva: {
+            status: "atendido",
+            titulo: "Relevância coletiva",
+            detalhe:
+              "As normas de referência da ANA definem o cálculo tarifário, indenização de ativos e diretrizes para todas as entidades reguladoras infranacionais no saneamento básico.",
+          },
+          viabilidadeApuracao: {
+            status: "atendido",
+            titulo: "Viabilidade de apuração",
+            detalhe:
+              "Atos publicados no DOU e no portal da ANA com minutas regulatórias, relatórios de AIR e prazos públicos totalmente rastreáveis.",
+          },
+        },
+        parecerTecnico:
+          "Lead catalogado em observação ativa nos Observatórios de Águas e Tarifas Públicas. A apuração acompanhará a Consulta Pública nº 03/2026 (até 17/09/2026) e a recepção das diretrizes contábeis pelas agências infranacionais.",
+      },
+      {
+        observatorio: "recursos-minerais",
+        tema: "Segurança de Pilhas de Estéril/Rejeito e Automação de Prazos da CFEM (ANM)",
+        status: "em_observacao",
+        statusRotulo: "Lead de Monitoramento — Triagem Aberta",
+        resumo:
+          "Abertura da AP nº 02/2026 com AIR sobre regulação de segurança de pilhas de estéril e rejeito, combinada ao avanço do projeto de IA para controle de prazos de fiscalização da CFEM.",
+        criterios: {
+          recorrencia: {
+            status: "em_maturacao",
+            titulo: "Recorrência documentada",
+            detalhe:
+              "Monitoramento da minuta de resolução sobre pilhas de rejeito e da evolução dos módulos de fiscalização de royalties da ANM.",
+          },
+          relevanciaColetiva: {
+            status: "atendido",
+            titulo: "Relevância coletiva",
+            detalhe:
+              "Impacta a contenção de passivos ambientais em áreas lavradas e a apuração da arrecadação de royalties em todo o setor minerário nacional.",
+          },
+          viabilidadeApuracao: {
+            status: "atendido",
+            titulo: "Viabilidade de apuração",
+            detalhe:
+              "Aviso de audiência pública e documentos da AIR acessíveis no portal oficial da ANM.",
+          },
+        },
+        parecerTecnico:
+          "Item mantido em observação ativa no Observatório de Recursos Minerais com acompanhamento da sessão pública em 11/09/2026.",
+      },
+      {
+        observatorio: "energia",
+        tema: "Revisão Tarifária Roraima Energia, Indicadores de Obras e Armazenamento em Baterias (ANEEL)",
+        status: "em_observacao",
+        statusRotulo: "Lead de Monitoramento — Triagem Aberta",
+        resumo:
+          "Aprovação de redução tarifária média de 14,67% na Roraima Energia, CP nº 031/2026 para prazos de obras de distribuição e editais de leilões de baterias de grande porte.",
+        criterios: {
+          recorrencia: {
+            status: "em_maturacao",
+            titulo: "Recorrência documentada",
+            detalhe:
+              "Leilões de armazenamento de energia e novos indicadores de qualidade em fase inicial de escuta pública.",
+          },
+          relevanciaColetiva: {
+            status: "atendido",
+            titulo: "Relevância coletiva",
+            detalhe:
+              "Primeiro arcabouço de remuneração para armazenamento de energia em escala no SIN e revisão tarifária em sistema isolado.",
+          },
+          viabilidadeApuracao: {
+            status: "atendido",
+            titulo: "Viabilidade de apuração",
+            detalhe:
+              "Processos públicos e editais de leilão disponíveis no portal da ANEEL.",
+          },
+        },
+        parecerTecnico:
+          "Item em observação nos Observatórios de Energia, Mercado Livre de Energia e Transição Energética.",
+      },
+    ],
+    itensDescartados: [
+      {
+        titulo: "Portarias ANEEL de alteração da estrutura organizacional da agência",
+        fonte: "ANEEL",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-03",
+        motivoDescarte:
+          "Alteração da estrutura organizacional interna da agência, sem relação direta com os escopos regulatórios temáticos dos observatórios.",
+      },
+      {
+        titulo: "Início de operação comercial da Termelétrica Manaus I",
+        fonte: "ANEEL",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-01",
+        motivoDescarte:
+          "Ato operacional de outorga/liberação de geradora específica sem conteúdo normativo ou impacto regulatório difuso.",
+      },
+      {
+        titulo: "3ª edição do Painel El Niño (ANA)",
+        fonte: "ANA",
+        orgao: "ANA",
+        publicadoEm: "2026-09-01",
+        motivoDescarte:
+          "Divulgação de boletim de monitoramento climático/meteorológico sem inovação regulatória.",
+      },
+      {
+        titulo: "Oficina do PROGESTÃO (ANA)",
+        fonte: "ANA",
+        orgao: "ANA",
+        publicadoEm: "2026-09-02",
+        motivoDescarte:
+          "Evento de capacitação institucional e gestão de recursos hídricos nos estados.",
+      },
+      {
+        titulo: "Edital da UNESCO para consultor (ANA)",
+        fonte: "ANA",
+        orgao: "ANA",
+        publicadoEm: "2026-08-31",
+        motivoDescarte:
+          "Processo seletivo administrativo para contratação de consultoria individual.",
+      },
+      {
+        titulo: "Encontro sobre dados hídricos da Bacia Amazônica (ANA)",
+        fonte: "ANA",
+        orgao: "ANA",
+        publicadoEm: "2026-09-04",
+        motivoDescarte:
+          "Reunião técnica sobre governança e intercâmbio de dados hidrológicos internacionais.",
+      },
+      {
+        titulo: "Painel sobre cadeias de minerais críticos na EXPOSIBRAM (ANM)",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-09-03",
+        motivoDescarte:
+          "Participação institucional em painel de eventos do setor mineral sem teor normativo.",
+      },
+      {
+        titulo: "Tomada de Subsídios ANM nº 04/2026 (Sandbox Regulatório Mineral)",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-07-29",
+        motivoDescarte:
+          "Sem movimentação nova na janela de 01 a 08/09/2026. Prazo mantido aberto até 28/09/2026.",
+      },
+    ],
+    fontesSemOcorrencias: [
+      {
+        orgao: "DOU (Diário Oficial da União) — Busca Direta",
+        url: "https://in.gov.br",
+        observacao:
+          "Páginas de notícias das agências varridas em diretórios de defeso eleitoral. A busca direta no portal in.gov.br não retornou resultados indexáveis na janela semanal (atos validados via portais oficiais das agências).",
+      },
+    ],
+  },
+  {
     id: "ciclo-2026-08-24-2026-08-31",
     periodo: {
       inicio: "2026-08-24",
