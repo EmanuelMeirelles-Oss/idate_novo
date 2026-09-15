@@ -11,9 +11,9 @@ import { OBSERVATORIOS } from "@/content/observatorios";
 
 describe("Radar Regulatório Semanal", () => {
   it("deve conter dados válidos de ciclo e período", () => {
-    expect(RADAR_ATUAL.periodo.inicio).toBe("2026-09-01");
-    expect(RADAR_ATUAL.periodo.fim).toBe("2026-09-08");
-    expect(RADAR_ATUAL.periodo.rotulo).toBe("01 a 08/09/2026");
+    expect(RADAR_ATUAL.periodo.inicio).toBe("2026-09-07");
+    expect(RADAR_ATUAL.periodo.fim).toBe("2026-09-14");
+    expect(RADAR_ATUAL.periodo.rotulo).toBe("07 a 14/09/2026");
     expect(RADAR_ATUAL.fontesVigiadas.length).toBeGreaterThan(0);
     expect(RADAR_ATUAL.fontesVigiadas).toContain("ANM");
     expect(RADAR_ATUAL.fontesVigiadas).toContain("ANEEL");
@@ -36,54 +36,54 @@ describe("Radar Regulatório Semanal", () => {
 
   it("deve filtrar atos por observatório com precisão", () => {
     const itensAguas = obterItensRadar("aguas");
-    expect(itensAguas.length).toBe(2);
-    expect(contarItensRadar("aguas")).toBe(2);
+    expect(itensAguas.length).toBe(1);
+    expect(contarItensRadar("aguas")).toBe(1);
 
     const itensTarifas = obterItensRadar("tarifas-publicas");
-    expect(itensTarifas.length).toBe(2);
-    expect(contarItensRadar("tarifas-publicas")).toBe(2);
+    expect(itensTarifas.length).toBe(1);
+    expect(contarItensRadar("tarifas-publicas")).toBe(1);
 
     const itensEnergia = obterItensRadar("energia");
-    expect(itensEnergia.length).toBe(2);
-    expect(contarItensRadar("energia")).toBe(2);
-
-    const itensMercadoLivre = obterItensRadar("mercado-livre-energia");
-    expect(itensMercadoLivre.length).toBe(1);
-    expect(contarItensRadar("mercado-livre-energia")).toBe(1);
+    expect(itensEnergia.length).toBe(3);
+    expect(contarItensRadar("energia")).toBe(3);
 
     const itensTransicao = obterItensRadar("transicao-energetica");
-    expect(itensTransicao.length).toBe(1);
-    expect(contarItensRadar("transicao-energetica")).toBe(1);
+    expect(itensTransicao.length).toBe(2);
+    expect(contarItensRadar("transicao-energetica")).toBe(2);
 
     const itensMineracao = obterItensRadar("recursos-minerais");
     expect(itensMineracao.length).toBe(2);
     expect(contarItensRadar("recursos-minerais")).toBe(2);
+
+    const itensTerras = obterItensRadar("terras");
+    expect(itensTerras.length).toBe(1);
+    expect(contarItensRadar("terras")).toBe(1);
   });
 
   it("deve conter análise metodológica com os 3 critérios do IDATE", () => {
-    const analiseAguas = obterAnaliseRadar("aguas");
-    expect(analiseAguas).toBeDefined();
-    if (analiseAguas) {
-      expect(analiseAguas.criterios.recorrencia).toBeDefined();
-      expect(analiseAguas.criterios.recorrencia.status).toBe("em_maturacao");
-      expect(analiseAguas.criterios.relevanciaColetiva.status).toBe("atendido");
-      expect(analiseAguas.criterios.viabilidadeApuracao.status).toBe("atendido");
-      expect(analiseAguas.status).toBe("em_observacao");
-    }
-
     const analiseMineracao = obterAnaliseRadar("recursos-minerais");
     expect(analiseMineracao).toBeDefined();
     if (analiseMineracao) {
-      expect(analiseMineracao.criterios.recorrencia.status).toBe("em_maturacao");
+      expect(analiseMineracao.criterios.recorrencia).toBeDefined();
+      expect(analiseMineracao.criterios.recorrencia.status).toBe("atendido");
       expect(analiseMineracao.criterios.relevanciaColetiva.status).toBe("atendido");
       expect(analiseMineracao.criterios.viabilidadeApuracao.status).toBe("atendido");
       expect(analiseMineracao.status).toBe("em_observacao");
+    }
+
+    const analiseTransicao = obterAnaliseRadar("transicao-energetica");
+    expect(analiseTransicao).toBeDefined();
+    if (analiseTransicao) {
+      expect(analiseTransicao.criterios.recorrencia.status).toBe("em_maturacao");
+      expect(analiseTransicao.criterios.relevanciaColetiva.status).toBe("atendido");
+      expect(analiseTransicao.criterios.viabilidadeApuracao.status).toBe("atendido");
+      expect(analiseTransicao.status).toBe("em_observacao");
     }
   });
 
   it("deve registrar transparência institucional de itens descartados e fontes sem ocorrência", () => {
     expect(RADAR_ATUAL.itensDescartados).toBeDefined();
-    expect(RADAR_ATUAL.itensDescartados?.length).toBe(8);
+    expect(RADAR_ATUAL.itensDescartados?.length).toBe(13);
 
     expect(RADAR_ATUAL.fontesSemOcorrencias).toBeDefined();
     expect(RADAR_ATUAL.fontesSemOcorrencias?.length).toBe(1);
@@ -91,16 +91,17 @@ describe("Radar Regulatório Semanal", () => {
 
   it("deve suportar histórico de ciclos anteriores arquivados", () => {
     const ciclos = obterTodosCiclos();
-    expect(ciclos.length).toBeGreaterThanOrEqual(5);
-    expect(HISTORICO_RADAR[0].periodo.inicio).toBe("2026-09-01");
-    expect(HISTORICO_RADAR[1].periodo.inicio).toBe("2026-08-24");
-    expect(HISTORICO_RADAR[2].periodo.inicio).toBe("2026-08-17");
-    expect(HISTORICO_RADAR[3].periodo.inicio).toBe("2026-08-10");
-    expect(HISTORICO_RADAR[4].periodo.inicio).toBe("2026-08-03");
+    expect(ciclos.length).toBeGreaterThanOrEqual(6);
+    expect(HISTORICO_RADAR[0].periodo.inicio).toBe("2026-09-07");
+    expect(HISTORICO_RADAR[1].periodo.inicio).toBe("2026-09-01");
+    expect(HISTORICO_RADAR[2].periodo.inicio).toBe("2026-08-24");
+    expect(HISTORICO_RADAR[3].periodo.inicio).toBe("2026-08-17");
+    expect(HISTORICO_RADAR[4].periodo.inicio).toBe("2026-08-10");
+    expect(HISTORICO_RADAR[5].periodo.inicio).toBe("2026-08-03");
 
     // Consulta específica por ciclo anterior
-    const itensCicloAnterior = obterItensRadar(undefined, "ciclo-2026-08-24-2026-08-31");
-    expect(itensCicloAnterior.length).toBe(2);
+    const itensCicloAnterior = obterItensRadar(undefined, "ciclo-2026-09-01-2026-09-08");
+    expect(itensCicloAnterior.length).toBe(10);
   });
 });
 

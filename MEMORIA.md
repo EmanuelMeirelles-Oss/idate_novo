@@ -180,3 +180,29 @@
     * Compilação estática de produção do Next.js aprovada (`next build` gerando 19 rotas).
     * Commit e push para a branch `main` no repositório GitHub para auto-deploy na Vercel.
 
+### [15/09/2026] — Atualização do Radar Regulatório Semanal (Ciclo 07 a 14/09/2026)
+* **Demanda**: Incorporação e triagem metodológica do relatório semanal de atos regulatórios publicados entre 07 e 14 de setembro de 2026 (ANEEL, ANA, ANM e DOU).
+* **Solução Implementada**:
+  * **Atualização do Radar Regulatório (`content/radar.ts`)**:
+    * Período ativo configurado para `07 a 14/09/2026` (`ciclo-2026-09-07-2026-09-14`).
+    * Cadastro de 10 atos regulatórios estruturados com vínculo explícito a observatórios e perguntas de pesquisa:
+      1. *ANEEL*: Primeira revisão da Agenda Regulatória 2026-2027 (Energia).
+      2. *ANEEL*: Regras para Recursos Energéticos Distribuídos (Solar, Baterias, VE) em consulta pública (Transição Energética).
+      3. *ANEEL*: Leilão de transmissão de abril/2027 com contratação inédita de baterias (R$ 12,9 bi) (Transição Energética).
+      4. *ANEEL*: Aprovação de transferência de controle de 26 concessionárias de transmissão (Energia).
+      5. *ANA*: Atualização do piso financeiro do Certificado de Sustentabilidade da Obra Hídrica — CERTOH (Águas).
+      6. *ANA*: Reta final da Consulta Pública nº 03/2026 sobre revisão tarifária no saneamento (Tarifas Públicas).
+      7. *ANM*: Encerramento da fase de contribuições sobre a futura norma de segurança de pilhas de estéril/rejeito (Recursos Minerais).
+      8. *ANM*: Alerta sobre reforço preventivo em barragens/pilhas contra chuvas extremas e El Niño (Recursos Minerais).
+      9. *ANM*: Consulta sobre modernização do sistema de organização de áreas de interesse mineral (Terras).
+      10. *DOU / MME*: Medida Provisória nº 1.389/2026 abrindo crédito extraordinário de R$ 6,605 bi ao MME (Energia).
+    * **Triagem Metodológica de Núcleo**:
+      * *Qualificação de Núcleo Metodológico*: **"Segurança de estruturas de rejeito e obras hídricas sob eventos climáticos extremos"** qualificado com atendimento simultâneo dos 3 critérios (Recorrência, Relevância Coletiva, Viabilidade) unindo atos da ANM, ANA e ANEEL.
+      * *Lead de Monitoramento*: **"Armazenamento em Baterias de Grande Porte e REDs"** mantido em observação ativa nos Observatórios de Transição Energética e Mercado Livre.
+    * **Transparência Institucional**: Mapeamento de 13 itens descartados por caráter operacional/estatístico/institucional e nota sobre a varredura parcial do DOU.
+  * **Validação & CI/CD**:
+    * Suíte de testes atualizada em `lib/radar.test.ts` (45 testes aprovados).
+    * Compilação estática de produção (`next build`).
+    * Commit e push para a branch `main` no GitHub.
+
+

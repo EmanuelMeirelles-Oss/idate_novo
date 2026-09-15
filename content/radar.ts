@@ -67,6 +67,349 @@ export interface CicloRadar {
 
 export const HISTORICO_RADAR: readonly CicloRadar[] = [
   {
+    id: "ciclo-2026-09-07-2026-09-14",
+    periodo: {
+      inicio: "2026-09-07",
+      fim: "2026-09-14",
+      rotulo: "07 a 14/09/2026",
+    },
+    fontesVigiadas: ["DOU", "ANM", "ANEEL", "ANA"],
+    itens: [
+      {
+        id: "aneel-revisao-agenda-regulatoria-2026-2027",
+        titulo:
+          "ANEEL aprova primeira revisão da Agenda Regulatória para o biênio 2026-2027",
+        fonte: "ANEEL — 09/09/2026",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-09",
+        url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/aneel-aprova-primeira-revisao-da-agenda-regulatoria-para-o-bienio-2026-2027",
+        resumo:
+          "Cinco novas atividades incluídas, nove remanejadas para 2028 e duas excluídas; a agenda fecha com 54 atividades regulatórias prioritárias para os próximos dois anos.",
+        observatorio: "energia",
+        perguntaVinculada:
+          "Como os encargos setoriais se distribuem entre as classes de consumo e que critérios sustentam essa repartição?",
+        empresasCitadas: ["ANEEL", "Agentes do Setor Elétrico"],
+      },
+      {
+        id: "aneel-consulta-publica-recursos-distribuidos-baterias-ve",
+        titulo:
+          "ANEEL propõe novas regras para preparar a rede elétrica para geração solar, baterias e veículos elétricos",
+        fonte: "ANEEL — 08/09/2026",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-08",
+        url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/aneel-propoe-novas-regras-para-preparar-a-rede-eletrica-para-geracao-solar-baterias-e-veiculos-eletricos",
+        resumo:
+          "Consulta pública aberta sobre integração de recursos energéticos distribuídos (REDs), visando preparar o sistema para geração distribuída, armazenamento em baterias e mobilidade elétrica.",
+        observatorio: "transicao-energetica",
+        perguntaVinculada:
+          "Como os incentivos tributários e creditícios do marco do hidrogênio de baixa emissão (Lei nº 14.948/2024) se harmonizam com o setor elétrico?",
+        empresasCitadas: ["ANEEL", "Distribuidoras", "Consumidores Geradores"],
+      },
+      {
+        id: "aneel-leilao-transmissao-armazenamento-baterias-2027",
+        titulo:
+          "Leilão de abril/2027, o primeiro com contratação de baterias na transmissão, entra em consulta pública",
+        fonte: "ANEEL — 08/09/2026",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-08",
+        url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/leilao-marcado-para-abril-de-2027-o-primeiro-com-contratacao-de-baterias-na-transmissao-entra-em-consulta-publica",
+        resumo:
+          "Consulta pública para o leilão de transmissão de abril de 2027, prevendo R$ 12,9 bilhões em investimentos e inaugurando a contratação de sistemas de armazenamento em baterias na rede básica.",
+        observatorio: "transicao-energetica",
+        perguntaVinculada:
+          "Como as novas exigências de descarbonização impactam os contratos legados da indústria de base?",
+        empresasCitadas: ["ANEEL", "Transmissoras", "ONS"],
+        valorEnvolvido: "R$ 12.900.000.000,00",
+      },
+      {
+        id: "aneel-transferencia-controle-26-concessionarias-transmissao",
+        titulo:
+          "ANEEL aprova transferência de controle indireto de 26 concessionárias de transmissão",
+        fonte: "ANEEL — 11/09/2026",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-11",
+        url: "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/aneel-aprova-transferencia-de-controle-indireto-de-26-concessionarias-de-transmissao",
+        resumo:
+          "Aprovação da operação societária com participação conjunta da Caisse de Dépôt et Placement du Québec e do Grupo Energía Bogotá no controle indireto de 26 concessionárias de transmissão de energia.",
+        observatorio: "energia",
+        perguntaVinculada:
+          "Em que medida decisões dos tribunais superiores alteraram a composição da tarifa nas últimas décadas?",
+        empresasCitadas: [
+          "Caisse de Dépôt et Placement du Québec",
+          "Grupo Energía Bogotá",
+          "ANEEL",
+        ],
+      },
+      {
+        id: "ana-certoh-atualizacao-valor-minimo-obras-hidricas",
+        titulo:
+          "ANA atualiza valor mínimo de obras de infraestrutura sujeitas ao Certificado de Avaliação da Sustentabilidade da Obra Hídrica",
+        fonte: "ANA — 10/09/2026",
+        orgao: "ANA",
+        publicadoEm: "2026-09-10",
+        url: "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias-periodo-eleitoral-2026/agencia-atualiza-valor-minimo-de-obras-de-infraestrutura-sujeitas-ao-certificado-de-avaliacao-da-sustentabilidade-da-obra-hidrica",
+        resumo:
+          "Atualização do piso financeiro que obriga obras hídricas ao Certificado de Avaliação da Sustentabilidade (CERTOH), alterando a régua de fiscalização e governança ambiental de barragens e canais.",
+        observatorio: "aguas",
+        perguntaVinculada:
+          "Quais conflitos de competência recorrentes surgem entre órgãos gestores de bacias hidrográficas?",
+        empresasCitadas: ["ANA", "Empreendedores Hídricos"],
+      },
+      {
+        id: "ana-consulta-publica-revisao-tarifaria-saneamento-reta-final",
+        titulo:
+          "Consulta pública sobre revisão tarifária de abastecimento de água e esgotamento sanitário entra na reta final",
+        fonte: "ANA — 10/09/2026",
+        orgao: "ANA",
+        publicadoEm: "2026-09-10",
+        url: "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias-periodo-eleitoral-2026/termina-na-proxima-quinta-17-a-consulta-publica-sobre-revisao-tarifaria-para-os-servicos-de-abastecimento-de-agua-e-esgotamento-sanitario",
+        resumo:
+          "Reta final da Consulta Pública nº 03/2026 sobre a Norma de Referência para revisões tarifárias de água e esgoto no âmbito do Marco Legal do Saneamento Básico, com encerramento em 17/09/2026.",
+        observatorio: "tarifas-publicas",
+        perguntaVinculada:
+          "Que componentes integram a tarifa e quais deles são efetivamente discriminados ao usuário?",
+        empresasCitadas: ["ANA", "ERIs", "Prestadores de Saneamento"],
+      },
+      {
+        id: "anm-contribuicoes-norma-seguranca-pilhas-esteril-rejeito",
+        titulo:
+          "Sociedade apresenta contribuições para futura norma sobre segurança de pilhas de estéril e rejeito na mineração",
+        fonte: "ANM — 11/09/2026",
+        orgao: "ANM",
+        publicadoEm: "2026-09-11",
+        url: "https://www.gov.br/anm/pt-br/assuntos/noticias/sociedade-apresenta-contribuicoes-para-futura-norma-sobre-seguranca-de-pilhas",
+        resumo:
+          "Encerramento das sessões e recebimento de contribuições técnicas sobre a minuta de resolução que estabelecerá os requisitos de segurança para pilhas de estéril e rejeito mineral.",
+        observatorio: "recursos-minerais",
+        perguntaVinculada:
+          "Que obrigações de recuperação ambiental incidem sobre áreas lavradas e como são fiscalizadas?",
+        empresasCitadas: ["ANM", "Mineradoras"],
+      },
+      {
+        id: "anm-alerta-chuvas-extremas-el-nino-estruturas-minerarias",
+        titulo:
+          "ANM alerta empreendedores para reforço de medidas preventivas contra chuvas extremas e El Niño",
+        fonte: "ANM — 10/09/2026",
+        orgao: "ANM",
+        publicadoEm: "2026-09-10",
+        url: "https://www.gov.br/anm/pt-br/assuntos/noticias/empreendedores-devem-reforcar-medidas-preventivas-contra-possiveis-chuvas-extremas-associadas-ao-el-nino",
+        resumo:
+          "Recomendação oficial da agência minerária exigindo monitoramento intensivo e inspeções extraordinárias em barragens e pilhas de rejeito em razão da previsão de precipitações severas.",
+        observatorio: "recursos-minerais",
+        perguntaVinculada:
+          "Que obrigações de recuperação ambiental incidem sobre áreas lavradas e como são fiscalizadas?",
+        empresasCitadas: ["ANM", "Empreendedores Minerários"],
+      },
+      {
+        id: "anm-modernizacao-delimitar-areas-interesse-mineral",
+        titulo:
+          "ANM abre consulta sobre modernização do sistema de organização de áreas de interesse mineral",
+        fonte: "ANM — 08/09/2026",
+        orgao: "ANM",
+        publicadoEm: "2026-09-08",
+        url: "https://www.gov.br/anm/pt-br/assuntos/noticias/ajude-a-modernizar-a-forma-como-se-organizan-as-areas-de-interesse-mineral",
+        resumo:
+          "Participação social aberta sobre a reformulação do sistema de quadrículas e ordenamento territorial dos direitos minerários no Brasil, afetando sobreposições ambientais e fundiárias.",
+        observatorio: "terras",
+        perguntaVinculada:
+          "Qual o estado da jurisprudência sobre sobreposição entre títulos dominiais e áreas protegidas?",
+        empresasCitadas: ["ANM", "Titulares de Direitos Minerários"],
+      },
+      {
+        id: "dou-mme-medida-provisoria-1389-credito-extraordinario",
+        titulo:
+          "Medida Provisória nº 1.389/2026 abre crédito extraordinário de R$ 6,605 bilhões em favor do Ministério de Minas e Energia",
+        fonte: "DOU — 08/09/2026",
+        orgao: "DOU",
+        publicadoEm: "2026-09-08",
+        url: "https://www.in.gov.br/servicos/diario-oficial-da-uniao",
+        resumo:
+          "Publicação no DOU referente à edição da MP nº 1.389/2026 com alocação extraordinária de R$ 6,605 bilhões no orçamento do MME. Item sob checagem documental quanto à destinação dos recursos.",
+        observatorio: "energia",
+        perguntaVinculada:
+          "Como os encargos setoriais se distribuem entre as classes de consumo e que critérios sustentam essa repartição?",
+        empresasCitadas: ["Ministério de Minas e Energia", "Governo Federal"],
+        valorEnvolvido: "R$ 6.605.000.000,00",
+      },
+    ],
+    analises: [
+      {
+        observatorio: "recursos-minerais",
+        tema: "Segurança de Estruturas de Rejeito e Obras Hídricas sob Eventos Climáticos Extremos",
+        status: "em_observacao",
+        statusRotulo: "Núcleo de Pesquisa em Qualificação Metodológica — Atos Convergentes ANM/ANA/ANEEL",
+        resumo:
+          "Convergência de quatro atos e manifestações regulatórias na mesma semana: norma de segurança de pilhas em formação na ANM (11/09), alerta de chuvas extremas e El Niño da ANM (10/09), atualização do limiar do CERTOH para obras hídricas pela ANA (10/09) e o prazo de reclassificação de barragens de UHE na ANEEL (REN 1.064/2023).",
+        criterios: {
+          recorrencia: {
+            status: "atendido",
+            titulo: "Recorrência documentada",
+            detalhe:
+              "Quatro manifestações normativas convergentes editadas em setembro/2026 por três agências distintas (ANM, ANA e ANEEL), consolidando um padrão regulatório continuado de risco físico infraestrutural.",
+          },
+          relevanciaColetiva: {
+            status: "atendido",
+            titulo: "Relevância coletiva",
+            detalhe:
+              "Afeta a segurança física de populações a jusante de reservatórios e pilhas de rejeito, além da integridade de bacias hidrográficas e infraestruturas energéticas.",
+          },
+          viabilidadeApuracao: {
+            status: "atendido",
+            titulo: "Viabilidade de apuração",
+            detalhe:
+              "Documentação técnica e minutas normativas abertas nos portais das três agências reguladoras e no novo Portal de Estudos Técnicos da ANEEL.",
+          },
+        },
+        parecerTecnico:
+          "Conjunto qualificado para constituição de núcleo metodológico nos Observatórios de Recursos Minerais, Águas e Energia. Recomendada apuração jornalística e técnica focada no cruzamento das regras de segurança sob eventos climáticos extremos.",
+      },
+      {
+        observatorio: "transicao-energetica",
+        tema: "Armazenamento em Baterias de Grande Porte e Recursos Energéticos Distribuídos",
+        status: "em_observacao",
+        statusRotulo: "Lead de Monitoramento — Sinergia Regulatória em Maturação",
+        resumo:
+          "A ANEEL lançou simultaneamente duas consultas públicas em 08/09/2026 para regulamentar a integração de recursos energéticos distribuídos (geração solar, baterias e VE) e o primeiro leilão de transmissão com contratação de baterias (previsto para abril/2027 com R$ 12,9 bi).",
+        criterios: {
+          recorrencia: {
+            status: "em_maturacao",
+            titulo: "Recorrência documentada",
+            detalhe:
+              "Dois atos regulatórios simultâneos da ANEEL. A comprovação de padrão temporal continuado dependerá do acompanhamento das contribuições e da edição dos editais definitivos nos próximos meses.",
+          },
+          relevanciaColetiva: {
+            status: "atendido",
+            titulo: "Relevância coletiva",
+            detalhe:
+              "Define a arquitetura regulatória e os modelos de remuneração para o armazenamento de energia em escala no Sistema Interligado Nacional.",
+          },
+          viabilidadeApuracao: {
+            status: "atendido",
+            titulo: "Viabilidade de apuração",
+            detalhe:
+              "Minutas de editais, termos de referência e documentos de consulta pública acessíveis no portal da ANEEL.",
+          },
+        },
+        parecerTecnico:
+          "Lead catalogado em observação ativa nos Observatórios de Transição Energética e Mercado Livre de Energia.",
+      },
+    ],
+    itensDescartados: [
+      {
+        titulo: "Assinatura de contratos do Leilão de Reserva de Capacidade e Transmissão nº 1/2026",
+        fonte: "ANEEL",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-10",
+        motivoDescarte:
+          "Cerimônia formal de assinatura de contratos decorrentes de certames já homologados em edições anteriores, sem novidade normativa.",
+      },
+      {
+        titulo: "Boletim de expansão da matriz elétrica de agosto/2026 (4,9 GW acumulados)",
+        fonte: "ANEEL",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-11",
+        motivoDescarte:
+          "Dado estatístico mensal de entrada em operação comercial de usinas, sem conteúdo regulatório autônomo.",
+      },
+      {
+        titulo: "Lançamento do Portal de Estudos Técnicos da ANEEL",
+        fonte: "ANEEL",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-08",
+        motivoDescarte:
+          "Disponibilização de repositório de pesquisas e inventários hidrelétricos. Relevante como fonte de consulta, não como ato regulatório.",
+      },
+      {
+        titulo: "Reta final da Consulta Pública ANA nº 04/2026 (Agenda Regulatória 2027-2028)",
+        fonte: "ANA",
+        orgao: "ANA",
+        publicadoEm: "2026-09-09",
+        motivoDescarte:
+          "Lembrete institucional sobre prazo de contribuição em consulta pública lançada em agosto/2026.",
+      },
+      {
+        titulo: "Tomada de subsídios para Planejamento Estratégico Institucional 2027-2031 da ANA",
+        fonte: "ANA",
+        orgao: "ANA",
+        publicadoEm: "2026-09-08",
+        motivoDescarte:
+          "Processo interno de planejamento administrativo e estratégico corporativo da agência.",
+      },
+      {
+        titulo: "Encerramento de inscrições orais para Audiência Pública sobre revisão tarifária (ANA)",
+        fonte: "ANA",
+        orgao: "ANA",
+        publicadoEm: "2026-09-08",
+        motivoDescarte:
+          "Etapa operacional de credenciamento de expositores para sessão pública.",
+      },
+      {
+        titulo: "ANA conquista 2º lugar em índice nacional de capacidade institucional",
+        fonte: "ANA",
+        orgao: "ANA",
+        publicadoEm: "2026-09-11",
+        motivoDescarte:
+          "Divulgação institucional de premiação e ranking de governança pública.",
+      },
+      {
+        titulo: "Reestruturação do combate à lavra ilegal pela ANM",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-09-09",
+        motivoDescarte:
+          "Anúncio de estratégias e acordos de cooperação sem publicação de resolução normativa ou ato sancionatório específico.",
+      },
+      {
+        titulo: "Debate sobre participação de fornecedores locais no Pará",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-09-09",
+        motivoDescarte:
+          "Evento e debate regional sobre conteúdo local e compras na cadeia produtiva mineral.",
+      },
+      {
+        titulo: "Ampliação de diálogo institucional Brasil-Canadá na mineração",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-09-10",
+        motivoDescarte:
+          "Reunião diplomática bilateral sobre cooperação em minerais estratégicos.",
+      },
+      {
+        titulo: "Edição do evento Horizonte Mineral da ANM",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-09-10",
+        motivoDescarte:
+          "Encontro técnico institucional sobre difusão de conhecimento geológico e mineral.",
+      },
+      {
+        titulo: "Aviso de indisponibilidade temporária de systems da ANM (11 a 14/09)",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-09-11",
+        motivoDescarte:
+          "Comunicado operacional sobre manutenção de infraestrutura de TI.",
+      },
+      {
+        titulo: "Tomada de Subsídios ANM nº 04/2026 (Sandbox Regulatório Mineral)",
+        fonte: "ANM",
+        orgao: "ANM",
+        publicadoEm: "2026-07-29",
+        motivoDescarte:
+          "Sem movimentação inédita na janela de 07 a 14/09/2026. Prazo de contribuições mantido até 28/09/2026.",
+      },
+    ],
+    fontesSemOcorrencias: [
+      {
+        orgao: "DOU (Diário Oficial da União) — Varredura Parcial",
+        url: "https://in.gov.br",
+        observacao:
+          "A busca direta no portal in.gov.br foi parcialmente limitada por ambiente de rede. Os atos regulatórios das agências foram validados diretamente nas páginas de notícias e publicações oficiais dos órgãos reguladores.",
+      },
+    ],
+  },
+  {
     id: "ciclo-2026-09-01-2026-09-08",
     periodo: {
       inicio: "2026-09-01",
