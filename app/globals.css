@@ -15,15 +15,15 @@
     osso sobre cobalto sólido 8.8:1
 */
 @theme {
-  --color-noite: #0a0c10;
-  --color-carvao: #14171d;
-  --color-osso: #e9ebef;
-  --color-fumaca: #8b93a1;
+  --color-noite: #f8f9fa;
+  --color-carvao: #ffffff;
+  --color-osso: #0f172a;
+  --color-fumaca: #475569;
   --color-cobalto: #1236c8;
-  --color-cobalto-claro: #5b7cff;
+  --color-cobalto-claro: #1236c8;
 
-  --color-fio: rgba(233, 235, 239, 0.12);
-  --color-fio-forte: rgba(233, 235, 239, 0.24);
+  --color-fio: rgba(15, 23, 42, 0.08);
+  --color-fio-forte: rgba(15, 23, 42, 0.16);
 
   --font-sans: var(--fonte-geist), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--fonte-geist-mono), ui-monospace, monospace;
@@ -32,7 +32,7 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--color-noite);
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -43,11 +43,11 @@ body {
 
 ::selection {
   background-color: var(--color-cobalto);
-  color: var(--color-osso);
+  color: #ffffff;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-cobalto-claro);
+  outline: 2px solid var(--color-cobalto);
   outline-offset: 3px;
 }
 
@@ -104,15 +104,15 @@ body {
 }
 
 /*
-  Acabamento Liquid Glass para selos, cartões e cabeçalho.
+  Acabamento Liquid Glass para selos, cartões e cabeçalho (Light Mode Editorial).
 */
 .liquid-glass {
-  background: rgba(20, 23, 29, 0.55);
+  background: rgba(255, 255, 255, 0.85);
   background-blend-mode: luminosity;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: none;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.9);
   position: relative;
   overflow: hidden;
 }
@@ -124,9 +124,9 @@ body {
   border-radius: inherit;
   padding: 1px;
   background: linear-gradient(180deg,
-    rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.08) 20%,
-    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
-    rgba(255,255,255,0.08) 80%, rgba(255,255,255,0.25) 100%);
+    rgba(15, 23, 42, 0.12) 0%, rgba(15, 23, 42, 0.04) 20%,
+    rgba(15, 23, 42, 0) 40%, rgba(15, 23, 42, 0) 60%,
+    rgba(15, 23, 42, 0.04) 80%, rgba(15, 23, 42, 0.12) 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;

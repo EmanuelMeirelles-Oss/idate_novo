@@ -222,5 +222,20 @@
   * **Validação & CI/CD**:
     * Atualização e execução da suíte de testes Vitest em `lib/radar.test.ts` (45 testes 100% aprovados).
 
+### [28/09/2026] — Implementação Experimental da Paleta Fundo Claro (Light Mode Editorial)
+* **Demanda**: Avaliação prática do impacto estático e de usabilidade ao transicionar o fundo do site de Dark Mode para Light Mode Institucional.
+* **Solução Implementada**:
+  * **Reformulação dos Tokens Globais (`lib/paleta.ts` e `app/globals.css`)**:
+    * Base (`noite`): `#F8F9FA` (Off-white névoa descansado, tom papel editorial).
+    * Superfície de Cards (`carvao`): `#FFFFFF` (Elevado com borda sutil `rgba(15,23,42,0.08)` e sombras leves).
+    * Texto Primário (`osso`): `#0F172A` (Slate 900 de alto contraste).
+    * Texto Secundário (`fumaca`): `#475569` (Slate 600).
+    * Acentos (`cobalto` / `cobaltoClaro`): `#1236C8` (Cobalto oficial preservado).
+    * Acabamento `liquid-glass`: Reajustado para opacidade clara com efeito de vidro frosted suave.
+  * **Conformidade & Suíte de Testes**:
+    * Atualização das asserções de contraste em `lib/paleta.test.ts` (45/45 testes aprovados).
+    * Compilação `next build` concluída com sucesso (33 rotas prerenderizadas).
+
+
 
 

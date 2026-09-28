@@ -14,7 +14,7 @@ export function CTALink({
     return (
       <Link
         href={href}
-        className="group inline-flex items-center gap-2.5 rounded-sm bg-cobalto px-7 py-3.5 text-sm font-semibold text-osso shadow-[0_0_25px_rgba(18,54,200,0.35)] transition-all duration-300 hover:bg-cobalto-claro hover:shadow-[0_0_35px_rgba(91,124,255,0.5)] active:scale-[0.98]"
+        className="group inline-flex items-center gap-2.5 rounded-sm bg-cobalto px-7 py-3.5 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(18,54,200,0.25)] transition-all duration-300 hover:bg-cobalto-claro hover:shadow-[0_6px_20px_rgba(18,54,200,0.35)] active:scale-[0.98]"
       >
         {children}
         <ArrowRight size={16} weight="bold" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />

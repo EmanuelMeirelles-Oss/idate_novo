@@ -14,13 +14,14 @@
  * conteúdo: sob prefers-reduced-motion o CSS força essas linhas para `osso`.
  */
 export const PALETA = {
-  noite: "#0A0C10",
-  carvao: "#14171D",
-  osso: "#E9EBEF",
-  fumaca: "#8B93A1",
+  noite: "#F8F9FA",
+  carvao: "#FFFFFF",
+  osso: "#0F172A",
+  fumaca: "#475569",
   cobalto: "#1236C8",
-  cobaltoClaro: "#5B7CFF",
-  penumbra: "#2C3340",
+  cobaltoClaro: "#1236C8",
+  penumbra: "#E2E8F0",
 } as const;
 
 export type NomeCor = keyof typeof PALETA;
+

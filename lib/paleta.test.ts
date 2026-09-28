@@ -19,12 +19,12 @@ describe("paleta — conformidade WCAG AA", () => {
     expect(contrastRatio(PALETA.osso, PALETA.carvao)).toBeGreaterThanOrEqual(7);
   });
 
-  it("osso sobre cobalto sólido atinge AA, para o botão primário", () => {
-    expect(contrastRatio(PALETA.osso, PALETA.cobalto)).toBeGreaterThanOrEqual(4.5);
+  it("carvão (texto claro) sobre cobalto sólido atinge AA, para o botão primário", () => {
+    expect(contrastRatio(PALETA.carvao, PALETA.cobalto)).toBeGreaterThanOrEqual(4.5);
   });
 
-  it("cobalto puro NÃO serve como texto sobre a base, e por isso existe cobaltoClaro", () => {
-    expect(contrastRatio(PALETA.cobalto, PALETA.noite)).toBeLessThan(4.5);
+  it("cobalto puro serve como texto de alto contraste sobre a base clara", () => {
+    expect(contrastRatio(PALETA.cobalto, PALETA.noite)).toBeGreaterThanOrEqual(4.5);
   });
 
   it("penumbra é decorativa: contraste baixo demais para carregar conteúdo", () => {
@@ -34,7 +34,7 @@ describe("paleta — conformidade WCAG AA", () => {
   /*
     Pares introduzidos pelo reposicionamento. Cards de observatório, triagem,
     etapas e expectativa usam `bg-carvao` com corpo em `fumaca` — combinação que
-    não existia antes e que carrega a maior parte do texto do site novo.
+    carrega a maior parte do texto do site novo.
   */
   it("fumaça sobre carvão atinge AA: é o corpo de texto de todos os cards", () => {
     expect(contrastRatio(PALETA.fumaca, PALETA.carvao)).toBeGreaterThanOrEqual(

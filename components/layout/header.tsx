@@ -45,7 +45,7 @@ export function Header() {
           {/* Canal de denúncias no Header Desktop */}
           <Link
             href={CANAL.href}
-            className="group inline-flex items-center gap-2 rounded-md bg-cobalto px-4 py-2 text-xs font-semibold text-osso shadow-[0_0_20px_rgba(18,54,200,0.3)] transition-all duration-300 hover:bg-cobalto-claro hover:shadow-[0_0_25px_rgba(91,124,255,0.4)] active:scale-[0.98]"
+            className="group inline-flex items-center gap-2 rounded-md bg-cobalto px-4 py-2 text-xs font-semibold text-white shadow-[0_2px_10px_rgba(18,54,200,0.2)] transition-all duration-300 hover:bg-cobalto-claro active:scale-[0.98]"
           >
             <span>{CANAL.nomeCurto}</span>
             <ArrowRight size={14} weight="bold" className="transition-transform duration-300 group-hover:translate-x-0.5" />
@@ -90,7 +90,7 @@ export function Header() {
               <Link
                 href={CANAL.href}
                 onClick={() => setMenuAberto(false)}
-                className="flex w-full items-center justify-center gap-2 rounded-md bg-cobalto py-3 text-sm font-semibold text-osso shadow-[0_0_20px_rgba(18,54,200,0.3)]"
+                className="flex w-full items-center justify-center gap-2 rounded-md bg-cobalto py-3 text-sm font-semibold text-white shadow-[0_2px_10px_rgba(18,54,200,0.2)]"
               >
                 <span>{CANAL.nomeCurto}</span>
                 <ArrowRight size={16} weight="bold" />
