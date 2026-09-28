@@ -67,6 +67,157 @@ export interface CicloRadar {
 
 export const HISTORICO_RADAR: readonly CicloRadar[] = [
   {
+    id: "ciclo-2026-09-14-2026-09-21",
+    periodo: {
+      inicio: "2026-09-14",
+      fim: "2026-09-21",
+      rotulo: "14 a 21/09/2026",
+    },
+    fontesVigiadas: ["DOU", "ANM", "ANEEL", "ANA"],
+    itens: [
+      {
+        id: "anm-politica-nacional-minerais-criticos-estrategicos",
+        titulo:
+          "Nova Política Nacional de Minerais Críticos e Estratégicos amplia atribuições da ANM",
+        fonte: "ANM — 17/09/2026 (Lei sancionada em 16/09/2026)",
+        orgao: "ANM",
+        publicadoEm: "2026-09-17",
+        url: "https://www.gov.br/anm/pt-br/assuntos/noticias/politica-de-minerais-criticos-preve-rastreabilidade-e-agregacao-de-valor-1",
+        resumo:
+          "Lei nova (não decreto) que amplia as atribuições da ANM: integração de cadastro público com o SIGMINE, priorização de áreas para leilão, fiscalização de sistemas de rastreabilidade mineral e regulação de contratos privados de financiamento mineral. O texto também trata de planejamento territorial e proteção socioambiental em regiões de mineração (com destaque para a Amazônia).",
+        observatorio: "recursos-minerais",
+        perguntaVinculada:
+          "Que obrigações de recuperação ambiental incidem sobre áreas lavradas e como são fiscalizadas?",
+        empresasCitadas: ["ANM", "Governo Federal"],
+      },
+      {
+        id: "anm-distribuicao-452-milhoes-cfem-pgrm",
+        titulo:
+          "ANM distribui mais de R$ 452 milhões em CFEM a estados e municípios via nova plataforma PGRM",
+        fonte: "ANM — 16/09/2026",
+        orgao: "ANM",
+        publicadoEm: "2026-09-16",
+        url: "https://www.gov.br/anm/pt-br/assuntos/noticias/mais-de-r-452-milhoes-em-cfem-sao-distribuidos-a-estados-e-municipios-produtores",
+        resumo:
+          "Repasse referente à arrecadação de agosto: mais de R$ 90 milhões para estados e DF, e mais de R$ 361 milhões para municípios. Primeira distribuição feita pela nova Plataforma de Gestão de Recursos Minerais (PGRM), que já processa 99,11% da arrecadação.",
+        observatorio: "recursos-minerais",
+        perguntaVinculada:
+          "Como se distribui a compensação financeira pela exploração mineral entre os entes federativos?",
+        empresasCitadas: ["ANM", "Estados e Municípios Produtores"],
+        valorEnvolvido: "R$ 452.000.000,00",
+      },
+      {
+        id: "anm-cruzamento-eletronico-dief-cfem-notas-fiscais",
+        titulo:
+          "ANM inicia cruzamento eletrônico entre DIEF-CFEM e notas fiscais eletrônicas em novembro",
+        fonte: "ANM — 16/09/2026",
+        orgao: "ANM",
+        publicadoEm: "2026-09-16",
+        url: "https://www.gov.br/anm/pt-br/assuntos/noticias/cruzamento-eletronico-entre-dief-cfem-e-notas-fiscais-entra-em-vigor-em-novembro",
+        resumo:
+          "A partir de 1º/11/2026, a ANM passa a cruzar declarações DIEF-CFEM com notas fiscais eletrônicas (operações desde janeiro/2025) para identificar divergências na base de cálculo da CFEM. Titulares de direitos minerários têm até 31/10/2026 para regularizar declarações pendentes.",
+        observatorio: "recursos-minerais",
+        perguntaVinculada:
+          "Como se distribui a compensação financeira pela exploração mineral entre os entes federativos?",
+        empresasCitadas: ["ANM", "Titulares de Direitos Minerários"],
+      },
+      {
+        id: "anm-reuniao-participativa-03-2026-sandbox-mineral",
+        titulo:
+          "ANM realiza Reunião Participativa nº 03/2026 sobre sandbox regulatório no setor mineral",
+        fonte: "ANM — 16/09/2026",
+        orgao: "ANM",
+        publicadoEm: "2026-09-16",
+        url: "https://www.gov.br/anm/pt-br/assuntos/noticias/reuniao-participativa-no-03-2026",
+        resumo:
+          "ANM abre reunião aberta (Reunião Participativa nº 03/2026 em 22/09/2026) para discutir a viabilidade e aplicações de um sandbox regulatório no setor mineral, vinculada à consulta na plataforma Brasil Participativo e à Tomada de Subsídios nº 04/2026 (prazo prorrogado até 28/09/2026).",
+        observatorio: "recursos-minerais",
+        perguntaVinculada:
+          "Que mudanças normativas podem resultar do sandbox regulatório para o setor mineral atualmente em consulta pública pela ANM?",
+        empresasCitadas: ["ANM", "Agentes do Setor Mineral"],
+      },
+    ],
+    analises: [
+      {
+        observatorio: "recursos-minerais",
+        tema: "Sistemas de Fiscalização da CFEM (PGRM e DIEF) e Marco Regulatório dos Minerais Críticos",
+        status: "em_observacao",
+        statusRotulo: "Lead de Monitoramento — Desenvolvimentos Normativos/Institucionais sem Núcleo Constituído",
+        resumo:
+          "Convergência de quatro novidades na ANM: sanção da Política Nacional de Minerais Críticos (Lei em 16/09), distribuição de R$ 452 mi em CFEM via nova PGRM (16/09), início do cruzamento eletrônico DIEF-CFEM com notas fiscais a partir de novembro (16/09) e Reunião Participativa nº 03/2026 sobre o sandbox regulatório (16/09).",
+        criterios: {
+          recorrencia: {
+            status: "em_maturacao",
+            titulo: "Recorrência documentada",
+            detalhe:
+              "Desenvolvimentos normativos e institucionais sem emergência de padrões de denúncias recorrentes nesta janela.",
+          },
+          relevanciaColetiva: {
+            status: "atendido",
+            titulo: "Relevância coletiva",
+            detalhe:
+              "Define atribuições sobre minerais estratégicos e assegura a exatidão na arrecadação e repartição da CFEM a centenas de municípios e estados.",
+          },
+          viabilidadeApuracao: {
+            status: "atendido",
+            titulo: "Viabilidade de apuração",
+            detalhe:
+              "Leis sancionadas, comunicados e minutas públicas acessíveis no portal oficial da ANM e no Diário Oficial.",
+          },
+        },
+        parecerTecnico:
+          "Nenhum dos itens acima, isoladamente ou somado ao acervo, preenche os três critérios simultâneos para constituição de núcleo de pesquisa (recorrência documentada, relevância coletiva e viabilidade de apuração). Trata-se de desenvolvimentos normativos/institucionais mantidos como leads em observação ativa.",
+      },
+    ],
+    itensDescartados: [
+      {
+        titulo:
+          "Atos administrativos rotineiros da ANEEL (homologação tarifária pontual e autorização de UTEs)",
+        fonte: "ANEEL",
+        orgao: "ANEEL",
+        publicadoEm: "2026-09-18",
+        motivoDescarte:
+          "Homologação de revisão tarifária de distribuidoras específicas e autorizações pontuais de usinas termelétricas sem conexão direta com perguntas de pesquisa em aberto de encargos ou composição tarifária.",
+      },
+      {
+        titulo: "Atos administrativos rotineiros da ANA",
+        fonte: "ANA",
+        orgao: "ANA",
+        publicadoEm: "2026-09-18",
+        motivoDescarte:
+          "Despachos operacionais sem relação com outorgas hídricas ou saneamento básico.",
+      },
+      {
+        titulo: "Publicações ordinárias do Diário Oficial da União (DOU)",
+        fonte: "DOU",
+        orgao: "DOU",
+        publicadoEm: "2026-09-18",
+        motivoDescarte:
+          "Atos de rotina sem impacto difuso nos escopos monitorados pelo instituto.",
+      },
+    ],
+    fontesSemOcorrencias: [
+      {
+        orgao: "ANEEL (Agência Nacional de Energia Elétrica)",
+        url: "https://www.gov.br/aneel",
+        observacao:
+          "Sem itens com relação clara a perguntas de pesquisa em aberto nesta semana.",
+      },
+      {
+        orgao: "ANA (Agência Nacional de Águas e Saneamento Básico)",
+        url: "https://www.gov.br/ana",
+        observacao:
+          "Sem itens com relação clara a perguntas de pesquisa em aberto nesta semana.",
+      },
+      {
+        orgao: "DOU (Diário Oficial da União)",
+        url: "https://in.gov.br",
+        observacao:
+          "Varredura sem registros de novidades regulatórias com impacto difuso nos observatórios.",
+      },
+    ],
+  },
+  {
     id: "ciclo-2026-09-07-2026-09-14",
     periodo: {
       inicio: "2026-09-07",

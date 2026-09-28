@@ -205,4 +205,22 @@
     * Compilação estática de produção (`next build`).
     * Commit e push para a branch `main` no GitHub.
 
+### [28/09/2026] — Atualização do Radar Regulatório Semanal (Ciclo 14 a 21/09/2026)
+* **Demanda**: Incorporação e triagem metodológica do relatório semanal de atos regulatórios publicados entre 14 e 21 de setembro de 2026 (ANM, ANEEL, ANA e DOU).
+* **Solução Implementada**:
+  * **Atualização do Radar Regulatório (`content/radar.ts`)**:
+    * Período ativo configurado para `14 a 21/09/2026` (`ciclo-2026-09-14-2026-09-21`).
+    * Cadastro de 4 atos regulatórios relevantes da ANM no Observatório de Recursos Minerais:
+      1. *ANM / Governo Federal*: Sancionada a nova Política Nacional de Minerais Críticos e Estratégicos (Lei de 16/09/2026) ampliando atribuições em cadastro (SIGMINE), leilões, rastreabilidade e regulação de financiamentos privados.
+      2. *ANM*: Distribuição de mais de R$ 452 milhões em CFEM referente a agosto/2026 com estreia operacional da Plataforma de Gestão de Recursos Minerais (PGRM), processando 99,11% da arrecadação.
+      3. *ANM*: Cruzamento eletrônico entre DIEF-CFEM e notas fiscais eletrônicas com vigência a partir de 01/11/2026 para apuração de divergências nas bases de cálculo.
+      4. *ANM*: Reunião Participativa nº 03/2026 convocada para 22/09/2026 sobre a viabilidade e modelos de sandbox regulatório no setor mineral.
+    * **Triagem Metodológica de Núcleo**:
+      * Nenhum dos itens isoladamente ou em conjunto preenche simultaneamente os 3 critérios do método (Recorrência documentada, Relevância coletiva, Viabilidade de apuração) para a abertura de um novo núcleo de pesquisa nesta janela — são desenvolvimentos normativos/institucionais mantidos como leads em observação ativa.
+    * **Transparência Institucional**:
+      * Registro formal de ausência de novos atos com conexão às perguntas de pesquisa em aberto nas fontes ANEEL, ANA e DOU (itens rotineiros de homologação/autorização descartados para evitar conexões forçadas).
+  * **Validação & CI/CD**:
+    * Atualização e execução da suíte de testes Vitest em `lib/radar.test.ts` (45 testes 100% aprovados).
+
+
 
