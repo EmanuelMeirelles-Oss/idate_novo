@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { List, X, ArrowRight } from "@phosphor-icons/react";
 import { Container } from "@/components/ui/container";
 import { Marca } from "./marca";
+import { SeletorTema } from "@/components/ui/seletor-tema";
 import { CANAL, NAVEGACAO } from "@/content/site";
 
 export function Header() {
@@ -17,7 +18,7 @@ export function Header() {
       <Container className="flex items-center justify-between py-4 md:py-5">
         <Marca compacta />
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {/* Navegação Desktop */}
           <nav aria-label="Navegação principal">
             <ul className="flex items-center gap-7">
@@ -41,6 +42,9 @@ export function Header() {
               })}
             </ul>
           </nav>
+
+          {/* Seletor de Tema (Claro / Escuro) */}
+          <SeletorTema />
 
           {/* Canal de denúncias no Header Desktop */}
           <Link
@@ -86,14 +90,15 @@ export function Header() {
                 );
               })}
             </ul>
-            <div className="mt-6 border-t border-fio pt-4">
+            <div className="mt-6 flex items-center justify-between border-t border-fio pt-4">
+              <SeletorTema />
               <Link
                 href={CANAL.href}
                 onClick={() => setMenuAberto(false)}
-                className="flex w-full items-center justify-center gap-2 rounded-md bg-cobalto py-3 text-sm font-semibold text-white shadow-[0_2px_10px_rgba(18,54,200,0.2)]"
+                className="flex items-center justify-center gap-2 rounded-md bg-cobalto px-4 py-2.5 text-xs font-semibold text-white shadow-[0_2px_10px_rgba(18,54,200,0.2)]"
               >
                 <span>{CANAL.nomeCurto}</span>
-                <ArrowRight size={16} weight="bold" />
+                <ArrowRight size={14} weight="bold" />
               </Link>
             </div>
           </nav>

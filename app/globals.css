@@ -29,16 +29,41 @@
   --font-mono: var(--fonte-geist-mono), ui-monospace, monospace;
 }
 
+:root {
+  --color-noite: #f8f9fa;
+  --color-carvao: #ffffff;
+  --color-osso: #0f172a;
+  --color-fumaca: #475569;
+  --color-cobalto: #1236c8;
+  --color-cobalto-claro: #1236c8;
+  --color-fio: rgba(15, 23, 42, 0.08);
+  --color-fio-forte: rgba(15, 23, 42, 0.16);
+}
+
+html[data-theme="dark"] {
+  --color-noite: #0a0c10;
+  --color-carvao: #14171d;
+  --color-osso: #e9ebef;
+  --color-fumaca: #8b93a1;
+  --color-cobalto: #1236c8;
+  --color-cobalto-claro: #5b7cff;
+  --color-fio: rgba(233, 235, 239, 0.12);
+  --color-fio-forte: rgba(233, 235, 239, 0.24);
+  color-scheme: dark;
+}
+
 html {
   scroll-behavior: smooth;
   background-color: var(--color-noite);
   color-scheme: light;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
   background-color: var(--color-noite);
   color: var(--color-osso);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
@@ -54,10 +79,6 @@ body {
 /*
   A fotografia do hero entra 6% maior e recua até o lugar, como câmera
   estabilizando depois do corte. Dois segundos e meio, sem repetir.
-
-  Feito em CSS e não em JavaScript de propósito: só `transform` é animado, o
-  compositor resolve sozinho, não custa nada na thread principal, e o bloco de
-  movimento reduzido logo abaixo já desliga sem precisar de código.
 */
 @keyframes assentar-hero {
   from {
@@ -74,11 +95,6 @@ body {
 
 /*
   Movimento reduzido desligado por CSS, nunca por JavaScript.
-
-  Trocar a marcação com base em useReducedMotion() quebra a hidratação: o
-  servidor não conhece a preferência e responde sempre false, então a árvore
-  inteira é descartada e regenerada no cliente. Emitindo marcação idêntica dos
-  dois lados e desligando aqui, o resultado visual é o mesmo sem o erro.
 */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -104,7 +120,7 @@ body {
 }
 
 /*
-  Acabamento Liquid Glass para selos, cartões e cabeçalho (Light Mode Editorial).
+  Acabamento Liquid Glass para selos, cartões e cabeçalho.
 */
 .liquid-glass {
   background: rgba(255, 255, 255, 0.85);
@@ -115,6 +131,14 @@ body {
   box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.9);
   position: relative;
   overflow: hidden;
+}
+
+html[data-theme="dark"] .liquid-glass {
+  background: rgba(20, 23, 29, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.14);
 }
 
 .liquid-glass::before {
@@ -131,4 +155,11 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
+}
+
+html[data-theme="dark"] .liquid-glass::before {
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.08) 20%,
+    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
+    rgba(255,255,255,0.08) 80%, rgba(255,255,255,0.25) 100%);
 }

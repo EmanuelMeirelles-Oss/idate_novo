@@ -222,19 +222,22 @@
   * **Validação & CI/CD**:
     * Atualização e execução da suíte de testes Vitest em `lib/radar.test.ts` (45 testes 100% aprovados).
 
-### [28/09/2026] — Implementação Experimental da Paleta Fundo Claro (Light Mode Editorial)
-* **Demanda**: Avaliação prática do impacto estático e de usabilidade ao transicionar o fundo do site de Dark Mode para Light Mode Institucional.
+### [28/09/2026] — Implementação do Seletor Dual de Tema (Light Mode Padrão + Dark Mode Toggle)
+* **Demanda**: Permitir alternância dinâmica de tema pelo usuário (Light Mode Editorial por padrão com opção de alternar para Dark Mode).
 * **Solução Implementada**:
-  * **Reformulação dos Tokens Globais (`lib/paleta.ts` e `app/globals.css`)**:
-    * Base (`noite`): `#F8F9FA` (Off-white névoa descansado, tom papel editorial).
-    * Superfície de Cards (`carvao`): `#FFFFFF` (Elevado com borda sutil `rgba(15,23,42,0.08)` e sombras leves).
-    * Texto Primário (`osso`): `#0F172A` (Slate 900 de alto contraste).
-    * Texto Secundário (`fumaca`): `#475569` (Slate 600).
-    * Acentos (`cobalto` / `cobaltoClaro`): `#1236C8` (Cobalto oficial preservado).
-    * Acabamento `liquid-glass`: Reajustado para opacidade clara com efeito de vidro frosted suave.
-  * **Conformidade & Suíte de Testes**:
-    * Atualização das asserções de contraste em `lib/paleta.test.ts` (45/45 testes aprovados).
-    * Compilação `next build` concluída com sucesso (33 rotas prerenderizadas).
+  * **Componente `SeletorTema` (`components/ui/seletor-tema.tsx`)**:
+    * Botão ultra leve com ícone dinâmico (Lua 🌙 no Light Mode / Sol ☀️ no Dark Mode).
+    * Persistência de preferência via `localStorage` (`idate-theme`).
+    * Script síncrono inline no `<head>` (`app/layout.tsx`) para zerar qualquer *Flash of Unstyled Content* (FOUC).
+  * **Tokens Globais Dinâmicos (`app/globals.css`)**:
+    * Padrão (Sem atributo): Light Mode Editorial (`#F8F9FA` base / `#FFFFFF` superfícies / `#0F172A` texto).
+    * Alternativa (`html[data-theme="dark"]`): Dark Mode Institucional (`#0A0C10` base / `#14171D` carvão / `#E9EBEF` osso).
+  * **Navegação & UI (`components/layout/header.tsx`)**:
+    * Integrado de forma compacta e fluida no cabeçalho desktop e no menu mobile sem poluir o layout.
+  * **Validação**:
+    * 45/45 testes Vitest 100% aprovados (`cmd.exe /c npx vitest run`).
+    * Compilação `next build` com sucesso (33 rotas prerenderizadas).
+
 
 
 
