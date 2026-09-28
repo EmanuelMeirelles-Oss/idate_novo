@@ -234,9 +234,12 @@
     * Alternativa (`html[data-theme="dark"]`): Dark Mode Institucional (`#0A0C10` base / `#14171D` carvão / `#E9EBEF` osso).
   * **Navegação & UI (`components/layout/header.tsx`)**:
     * Integrado de forma compacta e fluida no cabeçalho desktop e no menu mobile sem poluir o layout.
+  * **Seção Cinematográfica Esteira (`components/sections/esteira.tsx`)**:
+    * Mantida permanentemente em fundo escuro (`#0A0C10` base, onda cobalto e revelação de texto em penumbra `#475569` para osso claro `#F8FAFC`) para preservar o efeito visual de revelação de evidências e contraste dramático em ambos os modos de visualização.
   * **Validação**:
     * 45/45 testes Vitest 100% aprovados (`cmd.exe /c npx vitest run`).
     * Compilação `next build` com sucesso (33 rotas prerenderizadas).
+
 
 
 
